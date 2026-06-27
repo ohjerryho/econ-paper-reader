@@ -75,7 +75,9 @@ Output: Reading report with extended Concerns section and a verdict.
 
 Always produce a structured report. Depth scales with reading mode.
 
-**CRITICAL output rule**: Begin the report immediately with the paper title. Never write processing notes, progress summaries, or internal comments such as "Now I have enough material…", "Based on my reading…", or any similar meta-commentary before or after the report body. The report is the only output.
+**CRITICAL output rules**:
+1. Begin the report immediately with the paper title. Never write processing notes, progress summaries, or internal comments such as "Now I have enough material…", "Based on my reading…", or any similar meta-commentary before or after the report body. The report is the only output.
+2. Section headers must be **consistent in language throughout the report** — either all Chinese or all English. Never mix. Parenthetical translation is allowed (e.g., "核心问题 (Core Question)" or "Key Results（主要发现）"). Choose the language that matches the main body language of the report.
 
 ```
 # [论文标题 / Paper Title]

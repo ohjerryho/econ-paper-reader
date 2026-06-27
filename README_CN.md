@@ -3,7 +3,7 @@
 > 面向经济学文献的结构化 AI 阅读技能系统。
 
 **作者**: ohjerryho  
-**版本**: 0.1.0  
+**版本**: 0.3.0  
 **许可证**: MIT
 
 ---
@@ -32,7 +32,8 @@ econ-paper-reader/
 │   ├── epr-theory/SKILL.md                ← 理论模型（假设、命题、推论）
 │   ├── epr-methodology/SKILL.md           ← 计量方法论文（新估计量、识别策略辨析）
 │   ├── epr-causal-inference/SKILL.md      ← 因果识别策略（8种）
-│   └── epr-tables-figures/SKILL.md        ← 表格与图形解读
+│   ├── epr-tables-figures/SKILL.md        ← 表格与图形解读
+│   └── epr-related-refs/SKILL.md          ← 从参考文献列表中选取并格式化3篇延伸阅读
 │
 └── references/
     ├── paper-taxonomy.md                  ← 文献类型分类体系
@@ -97,19 +98,18 @@ econ-paper-reader/
 ## 阅读报告格式
 
 ```
-## 阅读报告：[论文标题]
+# [论文标题]
 
-引用：作者（年份）。"题目。"《期刊》。
-文章类型：[实证-简约式 / 理论 / 实证-结构 / 混合 / 计量方法 / 综述]
-风格：[英文顶刊 / 中文CSSCI / 工作论文]
+作者 / 来源 / 研究领域 / Paper type
 
-核心问题    — 这篇文章研究什么问题？
-研究设计    — 如何回答这个问题？（识别策略或模型方法）
-主要结论    — 2–4个核心发现，含经济意义量化
-贡献声明    — 作者声称的创新是什么？
-优点        — 设计的最强之处
-疑虑/弱点   — 识别假设的威胁、模型缺陷、遗漏稳健性检验
-总体评价    — 是否可信？发表潜力如何？
+核心问题     — 这篇文章研究什么问题？
+研究设计     — 如何回答？（识别策略或模型方法）
+主要发现     — 2–4个核心发现，含经济意义量化
+核心贡献     — 作者声称的创新是什么？
+亮点         — 设计的最强之处
+不足与疑问   — 识别假设的威胁、模型缺陷、遗漏稳健性检验
+综合评价     — 是否可信？发表潜力如何？
+延伸阅读     — 从参考文献列表中选取3篇最相关文献
 ```
 
 ---
@@ -130,45 +130,17 @@ econ-paper-reader/
 
 ---
 
-## 致谢
-
-本技能的参考资料来源于以下开源仓库，感谢原作者：
-
-**写作与投稿规范**
-
-| 仓库 | 作者/组织 | 用途 |
-|------|----------|------|
-| [AER-Skills](https://github.com/brycewang-stanford/AER-Skills) | brycewang-stanford | AER 投稿流程与各节写作标准 |
-| [econ-TopJournal-writing-Skill](https://github.com/juliaError/econ-TopJournal-writing-Skill) | juliaError | 顶刊写作技能（含中文顶刊） |
-| [econ-writing-skill](https://github.com/hanlulong/econ-writing-skill) | hanlulong | 综合经济学写作原则 |
-| [journal-adapt-writing-skill](https://github.com/WantongC/journal-adapt-writing-skill) | WantongC | 期刊适配写作技能 |
-| [research-writing-skill](https://github.com/Norman-bury/research-writing-skill) | Norman-bury | 研究写作综合框架 |
-
-**因果推断与计量**
-
-| 仓库 | 作者/组织 | 用途 |
-|------|----------|------|
-| [causal-inference-mixtape](https://github.com/Jill0099/causal-inference-mixtape) | Jill0099 | 基于 Cunningham《Causal Inference: The Mixtape》的识别策略技能 |
-| [codex-stata-for-economists](https://github.com/maxwell2732/codex-stata-for-economists) | maxwell2732 | Stata 经济学工具箱（含 review-paper、lit-review 等技能） |
-
-**理论模型**
-
-| 仓库 | 作者/组织 | 用途 |
-|------|----------|------|
-| [pAI-Econ-claude](https://github.com/maxwell2732/pAI-Econ-claude) | maxwell2732，原作者：Chen Zhu、Xiaolu Wang（中国农业大学）、Weilong Zhang（剑桥大学） | 理论经济学模型库，含28+基准模型参考文献 |
-
-**综合工具**
-
-| 仓库 | 作者/组织 | 用途 |
-|------|----------|------|
-| [AcademicForge](https://github.com/HughYau/AcademicForge) | HughYau | 学术研究综合工具 |
-| [Auto-Empirical-Research-Skills](https://github.com/brycewang-stanford/Auto-Empirical-Research-Skills) | brycewang-stanford | 实证研究自动化技能集 |
-| [awesome-ai-for-economists](https://github.com/hanlulong/awesome-ai-for-economists) | hanlulong | AI 经济学工具资源列表 |
-| [awesome-econ-ai-stuff](https://github.com/meleantonio/awesome-econ-ai-stuff) | meleantonio | AI 经济学相关技能与资源 |
-
----
-
 ## 更新日志
+
+### v0.3.0（2026-06-27）
+- 新增 `epr-related-refs` 子技能：从论文参考文献列表中选取并格式化3篇延伸阅读
+- 简化报告头部：作者 / 来源 / 研究领域 / Paper type（移除引用和风格字段）
+- 章节标题语言必须全篇统一（不允许中英混用）
+- 禁止在报告中输出任何内部独白或处理进度说明
+
+### v0.2.0（2026-06-27）
+- 新增 `epr-methodology` 子技能（计量方法论文）
+- 新增 `README_CN.md`
 
 ### v0.1.0（2026-06-27）
 - 初始版本

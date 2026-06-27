@@ -3,7 +3,7 @@
 > A structured skill system for reading, interpreting, and critically analyzing economics papers.
 
 **Author**: ohjerryho  
-**Version**: 0.2.0  
+**Version**: 0.3.0  
 **License**: MIT
 
 ---
@@ -38,7 +38,8 @@ econ-paper-reader/
 │   ├── epr-theory/SKILL.md           ← Reading theoretical model papers
 │   ├── epr-methodology/SKILL.md      ← Econometrics/methods papers (new estimators, critiques)
 │   ├── epr-causal-inference/SKILL.md ← Identification strategies: DiD, IV, RDD, SC, etc.
-│   └── epr-tables-figures/SKILL.md   ← Reading regression tables, event studies, RD plots
+│   ├── epr-tables-figures/SKILL.md   ← Reading regression tables, event studies, RD plots
+│   └── epr-related-refs/SKILL.md     ← Select & format top-3 related references (ref-format)
 │
 └── references/
     ├── paper-taxonomy.md             ← Classification system for economics papers
@@ -123,19 +124,18 @@ end-to-end paper reading.
 The skill produces a standardized report:
 
 ```
-## Reading Report: [Paper Title]
+# [论文标题 / Paper Title]
 
-Citation: Authors (Year). "Title." Journal.
-Paper type: [Empirical-RF / Theory / Mixed / etc.]
-Style: [English top-journal / Chinese CSSCI / Working paper]
+作者 / 来源 / 研究领域 / Paper type
 
-Core question       — What the paper asks
-Research design     — How it answers the question
-Key results         — 2–4 findings with economic magnitudes
-Stated contribution — What the authors claim is novel
-What works well     — Strongest aspects
-Concerns            — Threats to identification / model weaknesses
-Overall verdict     — Convincing? Publishable? Why?
+核心问题       — What the paper asks
+研究设计       — How it answers (identification or model)
+主要发现       — 2–4 findings with economic magnitudes
+核心贡献       — What the authors claim is novel
+亮点           — Strongest aspects
+不足与疑问     — Threats to identification / weaknesses
+综合评价       — Convincing? Why?
+延伸阅读       — Top-3 related references from the paper's reference list
 ```
 
 ---
@@ -149,61 +149,17 @@ conventions, the skill knows exactly what to *look for* when reading.
 
 ---
 
-## Acknowledgements
-
-This skill drew heavily on the following open-source repositories. Thanks to all original authors.
-
-**Writing conventions**
-
-| Repository | Author | What we drew from |
-|-----------|--------|------------------|
-| [AER-Skills](https://github.com/brycewang-stanford/AER-Skills) | brycewang-stanford | Section-by-section AER writing standards → reading expectations |
-| [econ-TopJournal-writing-Skill](https://github.com/juliaError/econ-TopJournal-writing-Skill) | juliaError | Top-journal and Chinese journal writing conventions |
-| [econ-writing-skill](https://github.com/hanlulong/econ-writing-skill) | hanlulong | Synthesis of 50+ economist writing guides |
-| [journal-adapt-writing-skill](https://github.com/WantongC/journal-adapt-writing-skill) | WantongC | Journal-specific style conventions |
-| [research-writing-skill](https://github.com/Norman-bury/research-writing-skill) | Norman-bury | Modular research writing framework |
-
-**Causal inference & econometrics**
-
-| Repository | Author | What we drew from |
-|-----------|--------|------------------|
-| [causal-inference-mixtape](https://github.com/Jill0099/causal-inference-mixtape) | Jill0099 | Identification strategies based on Cunningham (2021) |
-| [codex-stata-for-economists](https://github.com/maxwell2732/codex-stata-for-economists) | maxwell2732 | Stata workflows; paper review and lit-review skill patterns |
-
-**Theory models**
-
-| Repository | Author | What we drew from |
-|-----------|--------|------------------|
-| [pAI-Econ-claude](https://github.com/maxwell2732/pAI-Econ-claude) | maxwell2732; original authors: Chen Zhu & Xiaolu Wang (CAU), Weilong Zhang (Cambridge) | Benchmark model library for 28+ model types |
-
-**Comprehensive tools**
-
-| Repository | Author | What we drew from |
-|-----------|--------|------------------|
-| [AcademicForge](https://github.com/HughYau/AcademicForge) | HughYau | Academic research workflow patterns |
-| [Auto-Empirical-Research-Skills](https://github.com/brycewang-stanford/Auto-Empirical-Research-Skills) | brycewang-stanford | Empirical research automation skill patterns |
-| [awesome-ai-for-economists](https://github.com/hanlulong/awesome-ai-for-economists) | hanlulong | AI tools for economists resource list |
-| [awesome-econ-ai-stuff](https://github.com/meleantonio/awesome-econ-ai-stuff) | meleantonio | Economics AI skills and resources |
-
----
-
-## Development and contributing
-
-This skill is under active development. Planned additions:
-- `epr-welfare`: Reading welfare analysis and sufficient statistics papers
-- `epr-heterogeneity`: Reading CATE / distributional analysis sections
-- `epr-replication`: Assessing reproducibility and replication potential
-
-To contribute or report issues, open an issue or PR at the [GitHub repository](https://github.com/ohjerryho/econ-paper-reader).
-
----
-
 ## Changelog
+
+### v0.3.0 (2026-06-27)
+- Added `epr-related-refs` subskill: selects and formats top-3 related references per ref-format rules
+- Simplified report header: 作者 / 来源 / 研究领域 / Paper type (removed Citation/Style fields)
+- Section headers must now be consistent in language throughout (no mixing)
+- Banned internal monologue / processing notes from report output
 
 ### v0.2.0 (2026-06-27)
 - Added `epr-methodology` subskill for econometrics/methods papers
 - Added `README_CN.md` (Chinese README)
-- Added Acknowledgements section with original source repositories
 - Added PDF reading note
 
 ### v0.1.0 (2026-06-27)
