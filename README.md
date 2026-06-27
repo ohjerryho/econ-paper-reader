@@ -17,11 +17,13 @@
   ·
   <a href="#reading-output">Reading output</a>
   ·
+  <a href="#quick-start">Quick start</a>
+  ·
   <a href="#usage">Usage</a>
 </p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/version-0.6.0-0b4f5c">
+  <img alt="Version" src="https://img.shields.io/badge/version-0.6.1-0b4f5c">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-e8ad63">
   <img alt="Domain" src="https://img.shields.io/badge/domain-economics%20papers-234">
   <img alt="Skill" src="https://img.shields.io/badge/type-agent%20skill%20system-5fb2ab">
@@ -168,6 +170,39 @@ thinking, and literature review work.
   Key references selected from the paper's own bibliography
 ```
 
+## Quick start
+
+Install the skill by cloning this repository into the skill directory used by your agent.
+
+### Codex
+
+```bash
+mkdir -p ~/.codex/skills
+git clone https://github.com/ohjerryho/econ-paper-reader.git ~/.codex/skills/econ-paper-reader
+```
+
+Restart Codex after installation so the new skill metadata is loaded.
+
+### Claude Code
+
+```bash
+mkdir -p ~/.claude/skills
+git clone https://github.com/ohjerryho/econ-paper-reader.git ~/.claude/skills/econ-paper-reader
+```
+
+Restart Claude Code after installation so the skill becomes available.
+
+### Update an existing install
+
+```bash
+git -C ~/.codex/skills/econ-paper-reader pull
+# or, for Claude Code:
+git -C ~/.claude/skills/econ-paper-reader pull
+```
+
+If you use a different agent runtime, install the repository as a skill folder named
+`econ-paper-reader`, with `SKILL.md` at the root of that folder.
+
 ## Usage
 
 Place this directory where your agent loads skills, for example:
@@ -260,13 +295,19 @@ Quick-scan mode is much cheaper because it loads less context and reads selectiv
 |---|---|
 | Author | `ohjerryho` |
 | Repository | `github.com/ohjerryho/econ-paper-reader` |
-| Version | `0.6.0` |
+| Version | `0.6.1` |
 | License | `MIT` |
 
 ## Changelog
 
 <details>
-<summary><strong>v0.6.0 and earlier</strong></summary>
+<summary><strong>v0.6.1 and earlier</strong></summary>
+
+### v0.6.1 (2026-06-28)
+
+- Added Quick start installation instructions for Codex, Claude Code, and generic agent runtimes.
+- Added update commands for existing local installs.
+- Refreshed README presentation with a project cover image and bilingual documentation.
 
 ### v0.6.0 (2026-06-27)
 

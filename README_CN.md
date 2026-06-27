@@ -17,11 +17,13 @@
   ·
   <a href="#阅读报告">阅读报告</a>
   ·
+  <a href="#快速开始">快速开始</a>
+  ·
   <a href="#使用方式">使用方式</a>
 </p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/version-0.6.0-0b4f5c">
+  <img alt="Version" src="https://img.shields.io/badge/version-0.6.1-0b4f5c">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-e8ad63">
   <img alt="Domain" src="https://img.shields.io/badge/domain-economics%20papers-234">
   <img alt="Skill" src="https://img.shields.io/badge/type-agent%20skill%20system-5fb2ab">
@@ -165,6 +167,39 @@ econ-paper-reader/
   从论文参考文献列表中选择的关键相关文献
 ```
 
+## 快速开始
+
+把这个仓库 clone 到你的 agent 技能目录中即可安装。
+
+### Codex
+
+```bash
+mkdir -p ~/.codex/skills
+git clone https://github.com/ohjerryho/econ-paper-reader.git ~/.codex/skills/econ-paper-reader
+```
+
+安装后重启 Codex，让新的技能元信息进入技能列表。
+
+### Claude Code
+
+```bash
+mkdir -p ~/.claude/skills
+git clone https://github.com/ohjerryho/econ-paper-reader.git ~/.claude/skills/econ-paper-reader
+```
+
+安装后重启 Claude Code，让技能生效。
+
+### 更新已有安装
+
+```bash
+git -C ~/.codex/skills/econ-paper-reader pull
+# 或者，如果你安装在 Claude Code:
+git -C ~/.claude/skills/econ-paper-reader pull
+```
+
+如果你使用的是其他支持技能目录的 agent runtime，请把本仓库安装为名为
+`econ-paper-reader` 的技能文件夹，并确保 `SKILL.md` 位于该文件夹根目录。
+
 ## 使用方式
 
 把本目录放到你的 agent 技能加载路径下，例如：
@@ -254,13 +289,19 @@ econ-paper-reader/
 |---|---|
 | 作者 | `ohjerryho` |
 | 仓库 | `github.com/ohjerryho/econ-paper-reader` |
-| 版本 | `0.6.0` |
+| 版本 | `0.6.1` |
 | 许可证 | `MIT` |
 
 ## 更新日志
 
 <details>
-<summary><strong>v0.6.0 及以前</strong></summary>
+<summary><strong>v0.6.1 及以前</strong></summary>
+
+### v0.6.1（2026-06-28）
+
+- 新增快速安装说明，覆盖 Codex、Claude Code 和通用 agent runtime。
+- 新增已有本地安装的更新命令。
+- 更新 README 展示方式，加入项目封面图并完善中英文文档。
 
 ### v0.6.0（2026-06-27）
 
