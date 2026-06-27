@@ -1,6 +1,6 @@
 ---
 name: econ-paper-reader
-version: 0.5.0
+version: 0.6.0
 author: ohjerryho
 description: >
   Systematic reading, interpretation, and critical analysis of economics papers — empirical,
@@ -39,20 +39,22 @@ For detailed taxonomy and edge cases → `references/paper-taxonomy.md`
 
 ## Step 2: Route to subskills
 
-Load subskills based on the paper type. **Always start with `epr-structure`.**
+After classifying the paper type in Step 1, load subskills according to this **deterministic table**. Do not deviate.
 
-```
-subskills/epr-structure/SKILL.md        ← always load first
-subskills/epr-empirical/SKILL.md        ← if empirical sections present
-subskills/epr-theory/SKILL.md           ← if theoretical model sections present
-subskills/epr-methodology/SKILL.md      ← if paper proposes/critiques an econometric method
-subskills/epr-causal-inference/SKILL.md ← if identification strategy is central
-subskills/epr-tables-figures/SKILL.md   ← when interpreting tables or figures
-subskills/epr-policy-context/SKILL.md   ← if paper studies a policy/event/reform, or is Chinese-language
-subskills/epr-related-refs/SKILL.md     ← always load last; selects and formats top-3 related references
-```
+| Paper type | Load these subskills (in order) |
+|------------|--------------------------------|
+| Empirical — Reduced Form | epr-structure → epr-empirical → epr-causal-inference → epr-tables-figures |
+| Empirical — Structural | epr-structure → epr-empirical → epr-theory → epr-tables-figures |
+| Theoretical | epr-structure → epr-theory |
+| Methodology | epr-structure → epr-methodology → epr-causal-inference (if ID strategies critiqued) |
+| Mixed | epr-structure → epr-empirical → epr-theory → epr-causal-inference → epr-tables-figures |
+| Survey / Perspective | epr-structure only |
 
-Additional reference files:
+**Always add additionally:**
+- `epr-policy-context` — if the paper studies a policy/event/reform, OR is Chinese-language
+- `epr-related-refs` — always load last, for every paper type
+
+Additional reference files (load only if the relevant subskill instructs it):
 ```
 references/causal-methods-ref.md        ← deep reference on 10 CI methods
 references/theory-components-ref.md     ← model primitives, equilibria, proof reading
@@ -84,15 +86,17 @@ Always produce a structured report. Depth scales with reading mode.
 # [论文标题 / Paper Title]
 
 **作者**: [Authors]
-**来源**: [Journal / Source, Year]
+**来源**: [Journal / Source, Year]  *(no page numbers)*
 **研究领域**: [e.g., 国际贸易、产业组织、劳动经济学]
 **Paper type**: [e.g., Empirical-RF / Theory / Mixed / Methodology]
 
 ---
 
-### 一句话总结
+### 这篇文章讲了个什么故事
 
-[2–4句话：问题是什么、用什么方法、发现了什么、为什么重要。让读者在30秒内掌握全文核心。]
+[一段完整的研究叙事（通常4–8句），按这个逻辑展开：
+①现实中有什么问题或谜题？②为什么既有文献没有解决，或解决得不够好？③这篇文章的核心思路或方法是什么？④发现了什么？⑤这意味着什么（对理论、政策或未来研究的意义）。
+不要只是列要点——要像讲故事一样，让读者在开篇就能完整感受到这篇文章的来龙去脉和价值所在。]
 
 ### 政策与背景 *(有政策内容或中文文献时填写，按 epr-policy-context 子技能填写；纯理论/方法论文略去)*
 
@@ -104,7 +108,9 @@ Always produce a structured report. Depth scales with reading mode.
 
 [如何回答？简述识别策略或理论框架。]
 
-### 实证设计 *(reduced-form 实证文章必填，其他类型略去)*
+### 模型设定 *(理论/结构估计文章必填，按 epr-theory 子技能的 Mandatory output block 填写；纯RF实证文章略去)*
+
+### 实证设计 *(reduced-form 实证文章必填，按 epr-empirical 子技能的 Mandatory output block 填写；纯理论文章略去)*
 
 **回归方程** — [LaTeX 方程，完整呈现文中所有关键估计方程]
 

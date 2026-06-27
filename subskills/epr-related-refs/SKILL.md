@@ -1,13 +1,13 @@
 ---
 name: epr-related-refs
 description: >
-  Select and format the top 3 most relevant references from a paper's reference list.
+  Select and format the most relevant references from a paper's reference list.
   Always loaded last in econ-paper-reader. Applies ref-format citation rules.
 ---
 
 # epr-related-refs
 
-Select up to 3 references from the paper's own reference list for the **延伸阅读** section.
+Select the most relevant references from the paper's own reference list for the **延伸阅读** section.
 
 ## Selection criteria
 
@@ -22,7 +22,7 @@ When unsure about a reference's relevance, a brief web search on the title is ac
 ## Hard constraints
 
 - **Only from this paper's reference list** — never fabricate or infer references not explicitly listed.
-- **Maximum 3** — if fewer than 3 are clearly relevant, list only those that are.
+- **Quality over count** — include only references that are genuinely relevant and clearly central to the paper. There is no minimum or maximum. If only 1–2 references stand out as clearly important, list just those. Never add references just to reach a number.
 - **No [J]/[R]/[M] markers needed if unclear** — omit the marker rather than guess the reference type.
 
 ## Output format

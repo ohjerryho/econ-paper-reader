@@ -50,6 +50,35 @@ Every model has the same building blocks, even if the notation differs:
 Reading tip: Write these down as you read the model setup. This map is your guide through
 the rest of the paper.
 
+## Mandatory output block for theory and structural papers
+
+When reading any theory or structural paper, the report **MUST** include a dedicated **模型设定 (Model Setup)** block placed immediately after the 研究设计 section (and after 实证设计 if it also exists). Use this exact structure:
+
+```
+### 模型设定
+
+**核心方程**
+
+[Reproduce ALL key model equations in LaTeX display math ($$...$$).
+Include: objective functions, equilibrium conditions, key FOCs, law of motion, structural estimating equations.
+Number equations if the paper does. Never paraphrase — show the actual equations.]
+
+**符号说明**
+
+| 符号 | 含义 | 约束 / 假设 | 作用 |
+|------|------|------------|------|
+| $\theta$ | [parameter name] | [domain, e.g., θ ∈ (0,1)] | [what it drives in the model] |
+| $Y_t$ | [variable name] | [endogenous / exogenous] | [role in equilibrium] |
+
+[Include every symbol appearing in the key equations above: parameters, state variables, choice variables, equilibrium objects.]
+
+**⚠️ 关键假设与模型局限**
+
+[List the assumptions that DRIVE the main results — the ones the conclusions would not hold without.
+Also flag assumptions that seem strong or empirically questionable.
+Examples: functional form restrictions (CES, Cobb-Douglas), market structure (perfect competition, monopoly), information assumptions (full information, rational expectations), exogeneity of certain parameters.]
+```
+
 ## Equilibrium concept
 
 The equilibrium concept defines what "solution" means. Common concepts:
