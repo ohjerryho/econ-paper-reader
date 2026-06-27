@@ -1,6 +1,6 @@
 ---
 name: econ-paper-reader
-version: 0.4.0
+version: 0.4.1
 author: ohjerryho
 description: >
   Systematic reading, interpretation, and critical analysis of economics papers — empirical,
@@ -88,6 +88,10 @@ Always produce a structured report. Depth scales with reading mode.
 **Paper type**: [e.g., Empirical-RF / Theory / Mixed / Methodology]
 
 ---
+
+### 一句话总结
+
+[2–4句话：问题是什么、用什么方法、发现了什么、为什么重要。让读者在30秒内掌握全文核心。]
 
 ### 核心问题
 
