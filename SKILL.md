@@ -1,6 +1,6 @@
 ---
 name: econ-paper-reader
-version: 0.4.1
+version: 0.5.0
 author: ohjerryho
 description: >
   Systematic reading, interpretation, and critical analysis of economics papers — empirical,
@@ -48,6 +48,7 @@ subskills/epr-theory/SKILL.md           ← if theoretical model sections presen
 subskills/epr-methodology/SKILL.md      ← if paper proposes/critiques an econometric method
 subskills/epr-causal-inference/SKILL.md ← if identification strategy is central
 subskills/epr-tables-figures/SKILL.md   ← when interpreting tables or figures
+subskills/epr-policy-context/SKILL.md   ← if paper studies a policy/event/reform, or is Chinese-language
 subskills/epr-related-refs/SKILL.md     ← always load last; selects and formats top-3 related references
 ```
 
@@ -92,6 +93,8 @@ Always produce a structured report. Depth scales with reading mode.
 ### 一句话总结
 
 [2–4句话：问题是什么、用什么方法、发现了什么、为什么重要。让读者在30秒内掌握全文核心。]
+
+### 政策与背景 *(有政策内容或中文文献时填写，按 epr-policy-context 子技能填写；纯理论/方法论文略去)*
 
 ### 核心问题
 
