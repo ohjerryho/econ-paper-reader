@@ -1,6 +1,6 @@
 ---
 name: econ-paper-reader
-version: 0.1.0
+version: 0.3.0
 author: ohjerryho
 description: >
   Systematic reading, interpretation, and critical analysis of economics papers — empirical,
@@ -48,6 +48,7 @@ subskills/epr-theory/SKILL.md           ← if theoretical model sections presen
 subskills/epr-methodology/SKILL.md      ← if paper proposes/critiques an econometric method
 subskills/epr-causal-inference/SKILL.md ← if identification strategy is central
 subskills/epr-tables-figures/SKILL.md   ← when interpreting tables or figures
+subskills/epr-related-refs/SKILL.md     ← always load last; selects and formats top-3 related references
 ```
 
 Additional reference files:
@@ -74,38 +75,55 @@ Output: Reading report with extended Concerns section and a verdict.
 
 Always produce a structured report. Depth scales with reading mode.
 
-```
-## Reading Report: [Short Title]
+**CRITICAL output rule**: Begin the report immediately with the paper title. Never write processing notes, progress summaries, or internal comments such as "Now I have enough material…", "Based on my reading…", or any similar meta-commentary before or after the report body. The report is the only output.
 
-**Citation**: Authors (Year). "Title." *Journal/Source*.
-**Paper type**: [e.g., Empirical-RF / Theory / Mixed / Survey]
-**Style**: [English top-journal / Chinese CSSCI / Working paper]
+```
+# [论文标题 / Paper Title]
+
+**作者**: [Authors]
+**来源**: [Journal / Source, Year]
+**研究领域**: [e.g., 国际贸易、产业组织、劳动经济学]
+**Paper type**: [e.g., Empirical-RF / Theory / Mixed / Methodology]
 
 ---
 
-### Core question
-[One sentence: what question does this paper answer?]
+### 核心问题
 
-### Research design
-[How does the paper answer it? State identification strategy or model approach concisely.]
+[一句话：本文回答什么问题？]
 
-### Key results
-- [Finding 1 — include economic magnitude if empirical]
-- [Finding 2]
-- [Finding 3, if any]
+### 研究设计
 
-### Stated contribution
-[What does the paper claim is its novel contribution? How does it position against prior work?]
+[如何回答？简述识别策略或理论框架。]
 
-### What works well
-[Strongest aspects: clean identification, elegant model, rich data, compelling narrative]
+### 主要发现
 
-### Concerns / Weaknesses
-[Key assumptions under pressure, threats to identification, gaps in mechanism logic,
-missing robustness, questionable interpretation of coefficients]
+- [发现1——实证类请给出经济量级]
+- [发现2]
+- [发现3（如有）]
 
-### Overall verdict
-[Convincing? Why? Rough assessment of publishability/citation worthiness if relevant.]
+### 核心贡献
+
+[作者主张的创新点是什么？如何与既有文献区分？]
+
+### 亮点
+
+[最有说服力之处：识别策略干净、模型优雅、数据丰富、叙事清晰等]
+
+### 不足与疑问
+
+[核心假设是否承压、识别威胁、机制逻辑漏洞、缺失的稳健性检验、系数解读是否合理等]
+
+### 综合评价
+
+[是否令人信服？为何？如有必要，粗略评估发表价值或引用价值。]
+
+---
+
+### 延伸阅读
+
+[Top 3 most relevant references from this paper's reference list.
+Follow epr-related-refs subskill for selection criteria and ref-format formatting rules.
+If fewer than 3 clearly relevant references exist in the paper's reference list, only list those that are genuinely relevant — never fabricate or guess.]
 ```
 
 ## Core reading principles
