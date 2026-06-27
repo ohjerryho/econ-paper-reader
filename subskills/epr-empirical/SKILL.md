@@ -39,6 +39,48 @@ the structural parameters?*
 
 ---
 
+## Mandatory output block for reduced-form papers
+
+When reading any reduced-form paper, the report **MUST** include a dedicated **实证设计 (Empirical Design)** block placed immediately after the 研究设计 section. Use this exact structure:
+
+```
+### 实证设计
+
+**回归方程**
+
+[Reproduce ALL key estimating equations in LaTeX display math ($$...$$).
+Include: main equation, first stage (if IV), any mechanism/heterogeneity equations.
+Number equations if the paper does. Never paraphrase — show the actual equation.]
+
+**变量说明**
+
+| 变量 | 含义 | 构造方式 | 选择动机 |
+|------|------|----------|----------|
+| $Y_{it}$ | [outcome: what it measures] | [data source + computation] | [why this outcome captures what matters] |
+| $D_{it}$ | [treatment: what it measures] | [how assigned or measured] | [why this operationalization] |
+| $X_{it}$ | [controls: list each] | [how computed] | [why included] |
+| $\alpha_i$, $\lambda_t$ | [fixed effects] | [unit/time dimension] | [what variation they absorb and why] |
+
+[Include every variable appearing in the equations above. Instruments get their own rows.]
+
+**⚠️ 设计注意事项**
+
+[Use ⚠️ for each flagged issue. Include BOTH:
+(a) issues the authors themselves explicitly acknowledge in the text
+(b) issues you identify as a critical reader
+
+Examples: exclusion restriction concerns, anticipation effects, SUTVA violations,
+inference concerns (clustering level), external validity limits, pre-trend caveats,
+sample selection, parallel trends plausibility, treatment intensity heterogeneity.]
+```
+
+**Filling in the variable table**: Read the data section and variable definitions carefully.
+"Construction" should state: data source, unit of observation, whether it's a log/level/indicator, 
+and any winsorizing or normalization. "Motivation" should explain the *economic* reasoning for 
+why the author constructed it this way — not just "it's standard."
+
+---
+
 ## Reading a reduced-form paper
 
 ### The estimating equation
