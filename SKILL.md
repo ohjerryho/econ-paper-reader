@@ -29,6 +29,7 @@ Before reading in depth, determine the paper's dominant mode:
 | **Empirical — Structural** | Model primitives → equilibrium → estimation (GMM/MLE/SMM), counterfactual simulations |
 | **Theoretical** | Formal assumptions, propositions, proofs, corollaries, comparative statics |
 | **Mixed** | Theory motivates empirics, or empirics validate a structural model |
+| **Methodology** | New estimator/test, asymptotic theory, Monte Carlo simulations, methods critique, "how to do X" guide |
 | **Survey / Perspective** | Literature mapping, broad citations, no primary identification, often invited |
 
 Most serious papers are **Mixed**. The dominant mode determines which subskill leads; load
@@ -44,6 +45,7 @@ Load subskills based on the paper type. **Always start with `epr-structure`.**
 subskills/epr-structure/SKILL.md        ← always load first
 subskills/epr-empirical/SKILL.md        ← if empirical sections present
 subskills/epr-theory/SKILL.md           ← if theoretical model sections present
+subskills/epr-methodology/SKILL.md      ← if paper proposes/critiques an econometric method
 subskills/epr-causal-inference/SKILL.md ← if identification strategy is central
 subskills/epr-tables-figures/SKILL.md   ← when interpreting tables or figures
 ```
