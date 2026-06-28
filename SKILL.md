@@ -81,6 +81,8 @@ Always produce a structured report. Depth scales with reading mode.
 **CRITICAL output rules**:
 1. Begin the report immediately with the paper title. Never write processing notes, progress summaries, or internal comments such as "Now I have enough material…", "Based on my reading…", or any similar meta-commentary before or after the report body. The report is the only output.
 2. Section headers must be **consistent in language throughout the report** — either all Chinese or all English. Never mix. Parenthetical translation is allowed (e.g., "核心问题 (Core Question)" or "Key Results（主要发现）"). Choose the language that matches the main body language of the report.
+3. **LaTeX formatting**: All mathematical expressions — equations, formulas, variables, Greek letters — must use inline math (`$...$`) or display math (`$$...$$`). Never use fenced code blocks (` ```tex ``` `, ` ```latex ``` `, or any ` ``` ` variant) for math. This ensures formulas render correctly in Markdown viewers.
+4. **Bilingual terminology**: Key terms, concept names, variable names, and technical jargon must preserve the original-language form on first use. When writing in Chinese about an English paper, write the Chinese translation followed by the English original in parentheses on first occurrence — e.g., "买方势力（buyer power）"、"双重差分法（difference-in-differences, DiD）". When writing in English about a Chinese paper, write the English followed by the Chinese in parentheses — e.g., "event study method（事件研究法）". Subsequent occurrences may use either form alone.
 
 ```
 # [论文标题 / Paper Title]
