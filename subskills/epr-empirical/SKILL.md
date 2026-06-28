@@ -41,43 +41,68 @@ the structural parameters?*
 
 ## Mandatory output block for reduced-form papers
 
-When reading any reduced-form paper, the report **MUST** include a dedicated **实证设计 (Empirical Design)** block placed immediately after the 研究设计 section. Use this exact structure:
+When reading any reduced-form paper, the report **MUST** include a dedicated **实证设计 (Empirical Design)** block placed immediately after the 研究设计 section. This block is the heart of the report for empirical papers — give it full depth. Use this exact structure:
 
 ```
 ### 实证设计
 
-**回归方程**
+**基准回归方程 (Baseline Regression)**
 
-[Reproduce ALL key estimating equations in LaTeX display math ($$...$$).
-Include: main equation, first stage (if IV), any mechanism/heterogeneity equations.
+[Reproduce the main estimating equation(s) in LaTeX display math ($$...$$).
 Number equations if the paper does. Never paraphrase — show the actual equation.]
 
-**变量说明**
+固定效应（Fixed Effects）：[list all FE included, e.g., 个体固定效应 + 年份固定效应]
+标准误聚类（Clustering）：[level at which SE are clustered, e.g., 企业层面 / 县级 / 个人层面]
+
+**变量说明 (Variable Definitions)**
 
 | 变量 | 含义 | 构造方式 | 选择动机 |
 |------|------|----------|----------|
-| $Y_{it}$ | [outcome: what it measures] | [data source + computation] | [why this outcome captures what matters] |
-| $D_{it}$ | [treatment: what it measures] | [how assigned or measured] | [why this operationalization] |
-| $X_{it}$ | [controls: list each] | [how computed] | [why included] |
-| $\alpha_i$, $\lambda_t$ | [fixed effects] | [unit/time dimension] | [what variation they absorb and why] |
+| $Y_{it}$ | [outcome: what it measures] | [data source + computation] | [why this outcome] |
+| $D_{it}$ | [treatment] | [how assigned or measured] | [why this operationalization] |
+| $X_{it}$ | [key controls] | [how computed] | [why included] |
+| $\alpha_i$, $\lambda_t$ | [fixed effects] | [unit/time dimension] | [variation absorbed] |
 
-[Include every variable appearing in the equations above. Instruments get their own rows.]
+[Include every variable and instrument. Log vs. level matters — state it explicitly.]
 
-**⚠️ 设计注意事项**
+**稳健性与内生性处理 (Robustness & Endogeneity)**
+
+[Describe ALL robustness checks and endogeneity solutions the paper reports:
+- Alternative specifications (different controls, samples, time windows)
+- Placebo tests (fake treatments, pre-period outcomes)
+- Addressing endogeneity: IV strategy, matching, PSM, synthetic control robustness
+- Inference concerns: alternative clustering levels, wild bootstrap
+State WHAT was done and WHAT the result shows (robust / partially robust / sensitive).]
+
+**机制分析 (Mechanism Analysis)** *(if present; skip if absent)*
+
+[If the paper conducts mechanism analysis:
+- What mechanisms does the author hypothesize?
+- What is the empirical strategy to test each mechanism? (mediation, subgroup, auxiliary outcome)
+- What do the results show — which mechanism is confirmed, which is ruled out?
+This section is common in Chinese-language empirical papers; less universal in top English journals.]
+
+**异质性分析 (Heterogeneity Analysis)** *(if present; skip if absent)*
+
+[If the paper conducts heterogeneity analysis:
+- What dimensions of heterogeneity are examined? (industry, region, firm size, time period, etc.)
+- How is heterogeneity identified? (interaction terms, subgroup regressions)
+- What is the main pattern in the heterogeneous treatment effects?]
+
+**进一步分析 (Further Analysis)** *(if present; skip if absent)*
+
+[Any additional analyses beyond the baseline: welfare calculations, back-of-envelope cost-benefit,
+general equilibrium exercises, policy simulation using estimated parameters, etc.]
+
+**⚠️ 设计注意事项 (Design Flags)**
 
 [Use ⚠️ for each flagged issue. Include BOTH:
-(a) issues the authors themselves explicitly acknowledge in the text
+(a) issues the authors themselves explicitly acknowledge
 (b) issues you identify as a critical reader
 
-Examples: exclusion restriction concerns, anticipation effects, SUTVA violations,
-inference concerns (clustering level), external validity limits, pre-trend caveats,
-sample selection, parallel trends plausibility, treatment intensity heterogeneity.]
+Cover: exclusion restriction, anticipation, SUTVA, clustering level adequacy,
+parallel trends plausibility, external validity, sample selection, specification sensitivity.]
 ```
-
-**Filling in the variable table**: Read the data section and variable definitions carefully.
-"Construction" should state: data source, unit of observation, whether it's a log/level/indicator, 
-and any winsorizing or normalization. "Motivation" should explain the *economic* reasoning for 
-why the author constructed it this way — not just "it's standard."
 
 ---
 

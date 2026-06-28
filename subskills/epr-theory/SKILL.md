@@ -143,6 +143,43 @@ complex general-equilibrium models.
 Reading focus: Are the calibrated parameters within the range of prior estimates?
 How sensitive are the counterfactual results to the calibrated parameters?
 
+**Mandatory calibration block** for theory+calibration and structural papers:
+
+```
+### 校准与参数设定 (Calibration)
+
+**校准方法 (Calibration Method)**
+[Describe the method: GMM / SMM / MLE / method of moments / direct targeting of data moments.
+What data moments are matched? (e.g., labor share, trade elasticity, firm size distribution)]
+
+**预设参数 (Preset Parameters)**
+
+| 参数 | 含义 | 设定值 | 来源 / 依据 |
+|------|------|--------|------------|
+| $\beta$ | discount factor | 0.96 | standard in macro literature |
+| $\sigma$ | elasticity of substitution | 4.0 | Broda & Weinstein (2006) |
+
+[List every parameter taken from prior literature or set by assumption rather than estimated.
+These are the "free" inputs to the model — sensitivity to them matters.]
+
+**估计/校准结果 (Estimated Parameters)**
+
+| 参数 | 含义 | 估计值 | 解读 |
+|------|------|--------|------|
+| $\theta$ | matching efficiency | 0.72 | implies X% of vacancies filled per quarter |
+
+[For each estimated parameter: what does the value imply economically?
+How does it compare to prior literature? Are there implausible values?]
+
+**模型拟合 (Model Fit)**
+[Does the model replicate the targeted moments? Any notable misfit?
+Any non-targeted moments that the model matches or misses?]
+
+**反事实分析 (Counterfactual)**
+[What policy or shock is simulated? What do the counterfactual results show?
+How sensitive are the counterfactual results to key calibrated parameters?]
+```
+
 ### Theory with empirical application
 
 The model generates predictions that are tested in a companion empirical section.

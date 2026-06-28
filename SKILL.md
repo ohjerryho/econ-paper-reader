@@ -1,6 +1,6 @@
 ---
 name: econ-paper-reader
-version: 0.6.1
+version: 0.7.0
 author: ohjerryho
 description: >
   Systematic reading, interpretation, and critical analysis of economics papers — empirical,
@@ -48,7 +48,7 @@ After classifying the paper type in Step 1, load subskills according to this **d
 | Theoretical | epr-structure → epr-theory |
 | Methodology | epr-structure → epr-methodology → epr-causal-inference (if ID strategies critiqued) |
 | Mixed | epr-structure → epr-empirical → epr-theory → epr-causal-inference → epr-tables-figures |
-| Survey / Perspective | epr-structure only |
+| Survey / Perspective | epr-structure → epr-survey |
 
 **Always add additionally:**
 - `epr-policy-context` — if the paper studies a policy/event/reform, OR is Chinese-language
