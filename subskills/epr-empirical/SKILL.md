@@ -153,11 +153,6 @@ Two categories, clearly labeled:
 Cover as relevant: exclusion restriction, anticipation effects, SUTVA, clustering adequacy, parallel trends plausibility, external validity, sample selection, specification sensitivity, publication bias in mechanism results.]
 ```
 
-**Rule for 亮点 and 不足与疑问 sections** (applies globally, not just to empirical papers):
-
-- **亮点**: Anchor every point to specific features of THIS paper — a particular identification design choice, a novel dataset, an elegant theoretical insight, a surprising finding. Cite specific sections, tables, or methods. Do not use generic phrases like "identification is clean" without saying exactly what makes it clean.
-- **不足与疑问**: Start with what the paper explicitly acknowledges as its own limitations (cite section or footnote if possible). Then add reader-identified concerns — but each must be a specific, reasoned argument, not a checklist item. A concern is only worth writing if you can say WHY it matters for THIS paper's specific claims.
-
 ---
 
 ## Reading a reduced-form paper
