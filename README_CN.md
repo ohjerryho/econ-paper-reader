@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/version-0.8.0-0b4f5c">
+  <img alt="Version" src="https://img.shields.io/badge/version-0.8.1-0b4f5c">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-e8ad63">
   <img alt="Domain" src="https://img.shields.io/badge/domain-economics%20papers-234">
   <img alt="Skill" src="https://img.shields.io/badge/type-agent%20skill%20system-5fb2ab">
@@ -265,7 +265,17 @@ git -C ~/.claude/skills/econ-paper-reader pull
 | 完整期刊论文，约 40-50 页 | 200k-300k tokens |
 | OCR 较重、附录较重或 referee-style 深读 | 300k+ tokens |
 
-v0.7.1 本地测试中可复核的静态上下文载荷，即“抽取出的论文文本 + 实际路由加载的技能说明 + 最终报告正文”，明显低于上表。这个静态载荷只能视为 lower bound，不能代表完整运行消耗，因为它没有包含工具输出、多轮重读、中间推理上下文、PDF 抽取失败重试和不同 runtime 的计费口径。快速扫读模式会显著更省，因为它只加载最少上下文并选择性阅读。
+v0.7.1 本地测试只统计了可复核的静态上下文载荷，即“抽取出的论文文本 + 实际路由加载的技能说明 + 最终报告正文”。这个静态载荷只能视为 lower bound。
+
+v0.8.1 本地测试改用更接近单篇完整流程的代理口径：实际路由加载的技能说明、完整抽取文本、公式 / 表格 / 章节重读、最终报告正文，以及报告起草和修订的流程开销。它仍然**不是 billing 精确值**，因为本次 Codex Desktop 环境没有暴露单次运行的真实 token 计数器。观察到的完整流程代理值如下：
+
+| 测试文献类型 | 完整流程代理估算 |
+|---|---:|
+| 26 页中文实证论文，含政策背景 | 135k-165k tokens |
+| 29 页理论 + 校准论文 | 85k-115k tokens |
+| 71 页结构/实证混合 working paper，PDF 有 syntax warnings | 145k-190k tokens |
+
+这些代理估算多数低于上方的保守预算，但显著高于静态 PDF 文本大小。快速扫读模式会显著更省，因为它只加载最少上下文并选择性阅读。
 
 ## 设计原则
 
@@ -290,10 +300,24 @@ v0.7.1 本地测试中可复核的静态上下文载荷，即“抽取出的论�
 |---|---|
 | 作者 | `ohjerryho` |
 | 仓库 | `github.com/ohjerryho/econ-paper-reader` |
-| 版本 | `0.8.0` |
+| 版本 | `0.8.1` |
 | 许可证 | `MIT` |
 
 ## 更新日志
+
+### v0.8.1（2026-06-28）
+
+- 将**亮点 / 不足 grounding rule** 从 `epr-empirical` 移到主 `SKILL.md`，现在适用于所有论文类型，而不只适用于实证论文。
+
+### v0.8.0（2026-06-28）
+
+- **epr-empirical**：重写必填输出块，所有小节改为结构化表格，而不是非结构化段落堆叠。
+  - 固定效应表新增**选择理由**列，说明每个固定效应吸收什么变异、为什么需要。
+  - 新增 **IV 有效性**模块：相关性、排除限制、弱工具检验。
+  - **机制分析**：要求机制回归方程、变量构造表、渠道作用和结果。
+  - **异质性分析**：要求分组、系数、与基准结果关系和含义。
+  - **进一步分析**：要求设计逻辑、实证设定、结果及其与核心问题的关系。
+  - **亮点 / 不足规则**：每一点都必须锚定本文具体内容；作者自认局限与读者独立疑问分开标注。
 
 ### v0.7.1（2026-06-28）
 

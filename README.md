@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/version-0.8.0-0b4f5c">
+  <img alt="Version" src="https://img.shields.io/badge/version-0.8.1-0b4f5c">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-e8ad63">
   <img alt="Domain" src="https://img.shields.io/badge/domain-economics%20papers-234">
   <img alt="Skill" src="https://img.shields.io/badge/type-agent%20skill%20system-5fb2ab">
@@ -274,11 +274,24 @@ the extracted paper text.
 | Full journal article, about 40-50 pages | 200k-300k tokens |
 | OCR-heavy, appendix-heavy, or referee-style read | 300k+ tokens |
 
-In the v0.7.1 local test run, the reproducible static context payload — extracted paper text plus
-routed skill instructions plus the final report — was much lower than these budgets. Treat that
-static payload as a lower bound only. It does **not** capture repeated tool output, rereads,
-intermediate reasoning context, failed PDF extraction attempts, or runtime-specific accounting.
-Quick-scan mode is much cheaper because it loads less context and reads selectively.
+The v0.7.1 local test run measured only the reproducible static context payload — extracted
+paper text plus routed skill instructions plus the final report. Treat that static payload as a
+lower bound only.
+
+The v0.8.1 local test run used a fuller per-paper workflow proxy: routed skill instructions,
+full extracted paper text, formula/table/section rereads, final report text, and an allowance for
+draft/revision overhead. This is still **not billing-exact runtime usage**, because Codex Desktop
+did not expose a per-run token counter in that test. The observed workflow proxies were:
+
+| Tested paper type | Full-workflow proxy |
+|---|---:|
+| 26-page Chinese empirical paper with policy context | 135k-165k tokens |
+| 29-page theory + calibration article | 85k-115k tokens |
+| 71-page mixed structural/empirical working paper with PDF syntax warnings | 145k-190k tokens |
+
+These observed proxies were mostly below the conservative budgets above, but they were far above
+the static PDF text size. Quick-scan mode is much cheaper because it loads less context and reads
+selectively.
 
 ## Design principles
 
@@ -303,7 +316,7 @@ Quick-scan mode is much cheaper because it loads less context and reads selectiv
 |---|---|
 | Author | `ohjerryho` |
 | Repository | `github.com/ohjerryho/econ-paper-reader` |
-| Version | `0.8.0` |
+| Version | `0.8.1` |
 | License | `MIT` |
 
 ## Changelog
