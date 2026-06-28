@@ -296,10 +296,21 @@ Quick-scan mode is much cheaper because it loads less context and reads selectiv
 |---|---|
 | Author | `ohjerryho` |
 | Repository | `github.com/ohjerryho/econ-paper-reader` |
-| Version | `0.6.1` |
+| Version | `0.7.1` |
 | License | `MIT` |
 
 ## Changelog
+
+### v0.7.1 (2026-06-28)
+- Renamed subskills for consistent adjective-form naming: `epr-structure` → `epr-structural`, `epr-theory` → `epr-theoretical`, `epr-survey` → `epr-review`
+- All internal references updated accordingly
+
+### v0.7.0 (2026-06-28)
+- **epr-empirical**: Expanded mandatory 实证设计 block — baseline FE/clustering spec, robustness/endogeneity, mechanism analysis, heterogeneity analysis, further analysis
+- **epr-theoretical**: Added mandatory 校准与参数设定 block for structural/calibration papers
+- **New epr-review subskill**: Field development timeline, benchmark papers table, literature logic diagram (Mermaid), unlimited 延伸阅读 for benchmark papers
+- **epr-related-refs**: Survey paper override — no cap on references when paper type is review/survey
+- Routing table updated to route Survey/Perspective to `epr-structural → epr-review`
 
 <details>
 <summary><strong>v0.6.1 and earlier</strong></summary>

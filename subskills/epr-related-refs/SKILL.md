@@ -23,7 +23,7 @@ When unsure about a reference's relevance, a brief web search on the title is ac
 
 - **Only from this paper's reference list** — never fabricate or infer references not explicitly listed.
 - **Quality over count** — include only references that are genuinely relevant and clearly central to the paper. There is no minimum or maximum. If only 1–2 references stand out as clearly important, list just those. Never add references just to reach a number.
-- **Survey paper override**: for Survey/Perspective papers, include ALL benchmark papers from the 基准文献 table (no cap). See `epr-survey` for what counts as a benchmark.
+- **Survey paper override**: for Survey/Perspective papers, include ALL benchmark papers from the 基准文献 table (no cap). See `epr-review` for what counts as a benchmark.
 - **No [J]/[R]/[M] markers needed if unclear** — omit the marker rather than guess the reference type.
 
 ## Output format

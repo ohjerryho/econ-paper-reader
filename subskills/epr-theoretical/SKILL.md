@@ -1,5 +1,5 @@
 ---
-name: epr-theory
+name: epr-theoretical
 version: 0.1.0
 author: ohjerryho
 description: >
@@ -7,7 +7,7 @@ description: >
   propositions, proofs, and comparative statics. Part of the econ-paper-reader skill set.
 ---
 
-# epr-theory — Reading Theory Papers
+# epr-theoretical — Reading Theory Papers
 
 Theoretical economics papers use mathematics to derive logical implications of assumptions
 about economic behavior. The math is the language; the economic intuition is the content.

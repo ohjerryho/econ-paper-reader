@@ -1,5 +1,5 @@
 ---
-name: epr-survey
+name: epr-review
 version: 0.1.0
 author: ohjerryho
 description: >
@@ -9,7 +9,7 @@ description: >
   overview with no primary identification strategy of its own.
 ---
 
-# epr-survey — Reading Economics Survey Articles
+# epr-review — Reading Economics Survey Articles
 
 Survey papers are maps, not destinations. The reader's goal is not to evaluate a single
 argument but to quickly understand how a field developed, where it stands, and where to
@@ -22,7 +22,7 @@ go next. Reading strategy is accordingly different from empirical or theory pape
 - Main contribution is synthesis, taxonomy, or mapping of a literature
 
 If the paper is primarily a new model or new estimates with a long literature review section,
-use `epr-theory` or `epr-empirical` instead — this subskill is for papers where synthesis
+use `epr-theoretical` or `epr-empirical` instead — this subskill is for papers where synthesis
 **is** the contribution.
 
 ---

@@ -1,5 +1,5 @@
 ---
-name: epr-structure
+name: epr-structural
 version: 0.1.0
 author: ohjerryho
 description: >
@@ -8,7 +8,7 @@ description: >
   Load this as the first step whenever reading any economics paper.
 ---
 
-# epr-structure — Paper Anatomy
+# epr-structural — Paper Anatomy
 
 Top-journal papers follow a predictable architecture. Each section has a job to do. Reading
 well means knowing what each section *should* contain — so you can recognize when it delivers
@@ -70,7 +70,7 @@ When present, the model section establishes:
 - **Key predictions**: propositions or comparative statics that motivate the empirics
 
 Reading tip: Don't get lost in math. Identify the 1–2 core mechanisms the model is trying
-to capture. The rest is usually technical scaffolding. For theory papers, see `epr-theory`.
+to capture. The rest is usually technical scaffolding. For theory papers, see `epr-theoretical`.
 
 ## Empirical Strategy / Identification Section
 

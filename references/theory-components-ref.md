@@ -1,5 +1,5 @@
 ---
-name: epr-theory-components-ref
+name: epr-theoretical-components-ref
 version: 0.1.0
 author: ohjerryho
 ---

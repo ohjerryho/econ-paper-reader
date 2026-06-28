@@ -82,9 +82,9 @@ econ-paper-reader/
 │   └── cover.png                       # GitHub README 封面图
 │
 ├── subskills/
-│   ├── epr-structure/SKILL.md          # 论文结构：各章节应承担什么任务
+│   ├── epr-structural/SKILL.md          # 论文结构：各章节应承担什么任务
 │   ├── epr-empirical/SKILL.md          # RF 实证与结构估计论文
-│   ├── epr-theory/SKILL.md             # 理论模型与结构模型阅读
+│   ├── epr-theoretical/SKILL.md             # 理论模型与结构模型阅读
 │   ├── epr-methodology/SKILL.md        # 计量方法与研究方法论文
 │   ├── epr-causal-inference/SKILL.md   # 因果识别策略与诊断
 │   ├── epr-tables-figures/SKILL.md     # 回归表、事件研究图、RD 图等
@@ -108,12 +108,12 @@ econ-paper-reader/
 
 | 论文类型 | 按顺序加载的子技能 |
 |---|---|
-| **Empirical - Reduced Form** | `epr-structure` -> `epr-empirical` -> `epr-causal-inference` -> `epr-tables-figures` |
-| **Empirical - Structural** | `epr-structure` -> `epr-empirical` -> `epr-theory` -> `epr-tables-figures` |
-| **Theoretical** | `epr-structure` -> `epr-theory` |
-| **Methodology** | `epr-structure` -> `epr-methodology`；若涉及识别策略批判，再加载 `epr-causal-inference` |
-| **Mixed** | `epr-structure` -> `epr-empirical` -> `epr-theory` -> `epr-causal-inference` -> `epr-tables-figures` |
-| **Survey / Perspective** | `epr-structure` |
+| **Empirical - Reduced Form** | `epr-structural` -> `epr-empirical` -> `epr-causal-inference` -> `epr-tables-figures` |
+| **Empirical - Structural** | `epr-structural` -> `epr-empirical` -> `epr-theoretical` -> `epr-tables-figures` |
+| **Theoretical** | `epr-structural` -> `epr-theoretical` |
+| **Methodology** | `epr-structural` -> `epr-methodology`；若涉及识别策略批判，再加载 `epr-causal-inference` |
+| **Mixed** | `epr-structural` -> `epr-empirical` -> `epr-theoretical` -> `epr-causal-inference` -> `epr-tables-figures` |
+| **Survey / Perspective** | `epr-structural` |
 
 额外规则：
 

@@ -43,12 +43,12 @@ After classifying the paper type in Step 1, load subskills according to this **d
 
 | Paper type | Load these subskills (in order) |
 |------------|--------------------------------|
-| Empirical — Reduced Form | epr-structure → epr-empirical → epr-causal-inference → epr-tables-figures |
-| Empirical — Structural | epr-structure → epr-empirical → epr-theory → epr-tables-figures |
-| Theoretical | epr-structure → epr-theory |
-| Methodology | epr-structure → epr-methodology → epr-causal-inference (if ID strategies critiqued) |
-| Mixed | epr-structure → epr-empirical → epr-theory → epr-causal-inference → epr-tables-figures |
-| Survey / Perspective | epr-structure → epr-survey |
+| Empirical — Reduced Form | epr-structural → epr-empirical → epr-causal-inference → epr-tables-figures |
+| Empirical — Structural | epr-structural → epr-empirical → epr-theoretical → epr-tables-figures |
+| Theoretical | epr-structural → epr-theoretical |
+| Methodology | epr-structural → epr-methodology → epr-causal-inference (if ID strategies critiqued) |
+| Mixed | epr-structural → epr-empirical → epr-theoretical → epr-causal-inference → epr-tables-figures |
+| Survey / Perspective | epr-structural → epr-review |
 
 **Always add additionally:**
 - `epr-policy-context` — if the paper studies a policy/event/reform, OR is Chinese-language
@@ -66,7 +66,7 @@ references/chinese-vs-english.md        ← when reading Chinese-language papers
 Choose reading depth based on the user's goal:
 
 **Quick scan** (5 min): Abstract → Introduction → Conclusion → skim tables.
-Activate: `epr-structure` only. Output: 3–5 sentence summary.
+Activate: `epr-structural` only. Output: 3–5 sentence summary.
 
 **Standard read**: Full paper. All relevant subskills.
 Output: Full reading report (format below).
@@ -110,7 +110,7 @@ Always produce a structured report. Depth scales with reading mode.
 
 [如何回答？简述识别策略或理论框架。]
 
-### 模型设定 *(理论/结构估计文章必填，按 epr-theory 子技能的 Mandatory output block 填写；纯RF实证文章略去)*
+### 模型设定 *(理论/结构估计文章必填，按 epr-theoretical 子技能的 Mandatory output block 填写；纯RF实证文章略去)*
 
 ### 实证设计 *(reduced-form 实证文章必填，按 epr-empirical 子技能的 Mandatory output block 填写；纯理论文章略去)*
 
