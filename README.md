@@ -308,6 +308,15 @@ Quick-scan mode is much cheaper because it loads less context and reads selectiv
 
 ## Changelog
 
+### v0.8.0 (2026-06-28)
+- **epr-empirical**: Full rewrite of mandatory output block — all sections now use structured tables, not prose dumps
+  - Fixed effects table includes a **rationale column** (what variation each FE absorbs and why)
+  - New **IV validity block**: relevance (first-stage F / correlation), exclusion restriction argument, weak instrument test
+  - **Mechanism analysis**: regression equation in LaTeX + variable construction table + channel role + result per mechanism
+  - **Heterogeneity analysis**: structured table (group → coefficient → relation to baseline → implication)
+  - **Further analysis**: design logic + empirical setup + result + link to core question, per analysis
+  - **亮点 / 不足 rules**: every point must be grounded in THIS paper's specifics; author-acknowledged limitations labeled separately from reader-identified concerns
+
 ### v0.7.1 (2026-06-28)
 - Renamed subskills for consistent adjective-form naming: `epr-structural` → `epr-structural`, `epr-theoretical` → `epr-theoretical`, `epr-review` → `epr-review`
 - All internal references updated accordingly
