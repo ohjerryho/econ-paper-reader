@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/version-0.6.1-0b4f5c">
+  <img alt="Version" src="https://img.shields.io/badge/version-0.7.1-0b4f5c">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-e8ad63">
   <img alt="Domain" src="https://img.shields.io/badge/domain-economics%20papers-234">
   <img alt="Skill" src="https://img.shields.io/badge/type-agent%20skill%20system-5fb2ab">
@@ -257,14 +257,15 @@ git -C ~/.claude/skills/econ-paper-reader pull
 
 ## Token 消耗
 
-这是一个**重量级技能**。完整阅读一篇经济学论文时，通常需要加载多个子技能文件，再读取论文全文。
+这是一个**重量级技能**。完整阅读一篇经济学论文时，通常会经历 PDF 抽取、表图检查、子技能加载、章节重读、报告起草和修订等多个环节。下表是保守的**完整流程预算**，不是单纯的论文抽取文本大小。
 
-| 文献长度 | 大致 token 消耗 |
+| 文献长度 / 类型 | 保守流程预算 |
 |---|---:|
 | 短篇论文 / working paper，约 20-30 页 | 150k-200k tokens |
 | 完整期刊论文，约 40-50 页 | 200k-300k tokens |
+| OCR 较重、附录较重或 referee-style 深读 | 300k+ tokens |
 
-快速扫读模式会显著更省，因为它只加载最少上下文并选择性阅读。
+v0.7.1 本地测试中可复核的静态上下文载荷，即“抽取出的论文文本 + 实际路由加载的技能说明 + 最终报告正文”，明显低于上表。这个静态载荷只能视为 lower bound，不能代表完整运行消耗，因为它没有包含工具输出、多轮重读、中间推理上下文、PDF 抽取失败重试和不同 runtime 的计费口径。快速扫读模式会显著更省，因为它只加载最少上下文并选择性阅读。
 
 ## 设计原则
 
@@ -289,10 +290,24 @@ git -C ~/.claude/skills/econ-paper-reader pull
 |---|---|
 | 作者 | `ohjerryho` |
 | 仓库 | `github.com/ohjerryho/econ-paper-reader` |
-| 版本 | `0.6.1` |
+| 版本 | `0.7.1` |
 | 许可证 | `MIT` |
 
 ## 更新日志
+
+### v0.7.1（2026-06-28）
+
+- 统一子技能命名的形容词形式：`epr-structure` → `epr-structural`，`epr-theory` → `epr-theoretical`，`epr-survey` → `epr-review`。
+- 同步更新内部引用。
+- 澄清 token 消耗说明：区分完整流程预算与静态上下文载荷。
+
+### v0.7.0（2026-06-28）
+
+- **epr-empirical**：扩展必填的**实证设计**模块，覆盖基准固定效应 / 聚类、稳健性与内生性处理、机制分析、异质性分析和进一步分析。
+- **epr-theoretical**：为结构估计 / 校准类论文新增必填的**校准与参数设定**模块。
+- 新增 `epr-review` 子技能：支持领域发展脉络、基准文献表、文献逻辑图和综述类文献的延伸阅读。
+- **epr-related-refs**：综述类论文不再限制延伸阅读数量，应纳入基准文献。
+- 路由表更新：Survey / Perspective 路由至 `epr-structural → epr-review`。
 
 <details>
 <summary><strong>v0.6.1 及以前</strong></summary>

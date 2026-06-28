@@ -1,6 +1,6 @@
 ---
 name: econ-paper-reader
-version: 0.7.0
+version: 0.7.1
 author: ohjerryho
 description: >
   Systematic reading, interpretation, and critical analysis of economics papers — empirical,

@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/version-0.6.1-0b4f5c">
+  <img alt="Version" src="https://img.shields.io/badge/version-0.7.1-0b4f5c">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-e8ad63">
   <img alt="Domain" src="https://img.shields.io/badge/domain-economics%20papers-234">
   <img alt="Skill" src="https://img.shields.io/badge/type-agent%20skill%20system-5fb2ab">
@@ -263,14 +263,21 @@ true, causal, publishable, or correctly identified by itself.
 
 ## Token usage
 
-This is a **heavy skill** by design. A thorough economics-paper reading task may require loading
-multiple subskill files plus the paper itself.
+This is a **heavy skill** by design. A thorough economics-paper reading task may require repeated
+PDF extraction, table/figure inspection, subskill loading, section rereading, report drafting, and
+revision. The ranges below are conservative **end-to-end workflow budgets**, not just the size of
+the extracted paper text.
 
-| Paper length | Approximate token cost |
+| Paper length / type | Conservative workflow budget |
 |---|---:|
 | Short paper / working paper, about 20-30 pages | 150k-200k tokens |
 | Full journal article, about 40-50 pages | 200k-300k tokens |
+| OCR-heavy, appendix-heavy, or referee-style read | 300k+ tokens |
 
+In the v0.7.1 local test run, the reproducible static context payload — extracted paper text plus
+routed skill instructions plus the final report — was much lower than these budgets. Treat that
+static payload as a lower bound only. It does **not** capture repeated tool output, rereads,
+intermediate reasoning context, failed PDF extraction attempts, or runtime-specific accounting.
 Quick-scan mode is much cheaper because it loads less context and reads selectively.
 
 ## Design principles
@@ -304,6 +311,7 @@ Quick-scan mode is much cheaper because it loads less context and reads selectiv
 ### v0.7.1 (2026-06-28)
 - Renamed subskills for consistent adjective-form naming: `epr-structure` → `epr-structural`, `epr-theory` → `epr-theoretical`, `epr-survey` → `epr-review`
 - All internal references updated accordingly
+- Clarified token-usage guidance: workflow budget vs. static context payload
 
 ### v0.7.0 (2026-06-28)
 - **epr-empirical**: Expanded mandatory 实证设计 block — baseline FE/clustering spec, robustness/endogeneity, mechanism analysis, heterogeneity analysis, further analysis
