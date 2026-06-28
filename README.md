@@ -226,7 +226,8 @@ Give me a referee-style evaluation of this paper.
 ### PDF support
 
 This skill is meant to work alongside a PDF-reading capability. Most economics papers are
-distributed as PDFs; without PDF access, paste the paper text or relevant sections manually.
+distributed as PDFs; if the current agent does not have PDF parsing capability, it is best
+to equip it with the relevant skills or MCP servers.
 
 ### Reading modes
 

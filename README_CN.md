@@ -222,7 +222,7 @@ git -C ~/.claude/skills/econ-paper-reader pull
 
 ### PDF 支持
 
-本技能最好搭配 PDF 阅读能力使用。经济学论文大多以 PDF 发布；如果当前 agent 没有 PDF 解析能力，可以手动粘贴论文文本、章节内容或关键表图。
+本技能最好搭配 PDF 阅读能力使用。经济学论文大多以 PDF 发布；如果当前 agent 没有 PDF 解析能力，最好为其配备好相关的 skills 或 MCP。
 
 ### 阅读深度
 
