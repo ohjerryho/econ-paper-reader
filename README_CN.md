@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/version-0.7.1-0b4f5c">
+  <img alt="Version" src="https://img.shields.io/badge/version-0.8.0-0b4f5c">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-e8ad63">
   <img alt="Domain" src="https://img.shields.io/badge/domain-economics%20papers-234">
   <img alt="Skill" src="https://img.shields.io/badge/type-agent%20skill%20system-5fb2ab">
@@ -290,14 +290,14 @@ v0.7.1 本地测试中可复核的静态上下文载荷，即“抽取出的论�
 |---|---|
 | 作者 | `ohjerryho` |
 | 仓库 | `github.com/ohjerryho/econ-paper-reader` |
-| 版本 | `0.7.1` |
+| 版本 | `0.8.0` |
 | 许可证 | `MIT` |
 
 ## 更新日志
 
 ### v0.7.1（2026-06-28）
 
-- 统一子技能命名的形容词形式：`epr-structure` → `epr-structural`，`epr-theory` → `epr-theoretical`，`epr-survey` → `epr-review`。
+- 统一子技能命名的形容词形式：`epr-structural` → `epr-structural`，`epr-theoretical` → `epr-theoretical`，`epr-review` → `epr-review`。
 - 同步更新内部引用。
 - 澄清 token 消耗说明：区分完整流程预算与静态上下文载荷。
 

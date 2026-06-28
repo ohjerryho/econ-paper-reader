@@ -41,7 +41,7 @@ the structural parameters?*
 
 ## Mandatory output block for reduced-form papers
 
-When reading any reduced-form paper, the report **MUST** include a dedicated **实证设计 (Empirical Design)** block placed immediately after the 研究设计 section. This block is the heart of the report for empirical papers — give it full depth. Use this exact structure:
+When reading any reduced-form paper, the report **MUST** include a dedicated **实证设计 (Empirical Design)** block placed immediately after the 研究设计 section. Every sub-section below is **structured output** — use tables and formatted blocks, never unstructured prose dumps.
 
 ```
 ### 实证设计
@@ -51,58 +51,112 @@ When reading any reduced-form paper, the report **MUST** include a dedicated **�
 [Reproduce the main estimating equation(s) in LaTeX display math ($$...$$).
 Number equations if the paper does. Never paraphrase — show the actual equation.]
 
-固定效应（Fixed Effects）：[list all FE included, e.g., 个体固定效应 + 年份固定效应]
-标准误聚类（Clustering）：[level at which SE are clustered, e.g., 企业层面 / 县级 / 个人层面]
+**固定效应与标准误 (Fixed Effects & Standard Errors)**
+
+| 固定效应 | 吸收的变异来源 | 选择理由 |
+|---------|-------------|---------|
+| 个体固定效应 $\alpha_i$ | 个体间不随时间变化的特征 | [Why: e.g., 控制企业不可观测的固有异质性] |
+| 年份固定效应 $\lambda_t$ | 宏观共同时间趋势 | [Why: e.g., 排除全国性政策冲击和经济周期] |
+| [other FE] | [variation absorbed] | [identification reason] |
+
+标准误聚类：[level] — [why this level matches treatment assignment]
 
 **变量说明 (Variable Definitions)**
 
 | 变量 | 含义 | 构造方式 | 选择动机 |
 |------|------|----------|----------|
-| $Y_{it}$ | [outcome: what it measures] | [data source + computation] | [why this outcome] |
-| $D_{it}$ | [treatment] | [how assigned or measured] | [why this operationalization] |
-| $X_{it}$ | [key controls] | [how computed] | [why included] |
-| $\alpha_i$, $\lambda_t$ | [fixed effects] | [unit/time dimension] | [variation absorbed] |
+| $Y_{it}$ | [outcome] | [source + computation] | [why this operationalization] |
+| $D_{it}$ | [treatment] | [assignment or measurement] | [why] |
+| $X_{it}$ | [controls] | [how computed] | [why included / what omitted variable they address] |
 
-[Include every variable and instrument. Log vs. level matters — state it explicitly.]
+[Log vs. level matters — state it. Include every variable and instrument.]
+
+---
 
 **稳健性与内生性处理 (Robustness & Endogeneity)**
 
-[Describe ALL robustness checks and endogeneity solutions the paper reports:
-- Alternative specifications (different controls, samples, time windows)
-- Placebo tests (fake treatments, pre-period outcomes)
-- Addressing endogeneity: IV strategy, matching, PSM, synthetic control robustness
-- Inference concerns: alternative clustering levels, wild bootstrap
-State WHAT was done and WHAT the result shows (robust / partially robust / sensitive).]
+| 检验类型 | 具体做法 | 结论 |
+|---------|---------|------|
+| 替代规格 | [alternative controls / sample / window] | [robust / sensitive] |
+| 安慰剂检验 | [placebo treatment or outcome] | [passes / fails] |
+| [other check] | [description] | [result] |
 
-**机制分析 (Mechanism Analysis)** *(if present; skip if absent)*
+**IV 有效性** *(如使用IV，必填；否则略去)*
 
-[If the paper conducts mechanism analysis:
-- What mechanisms does the author hypothesize?
-- What is the empirical strategy to test each mechanism? (mediation, subgroup, auxiliary outcome)
-- What do the results show — which mechanism is confirmed, which is ruled out?
-This section is common in Chinese-language empirical papers; less universal in top English journals.]
+| 维度 | 内容 |
+|------|------|
+| 工具变量 | [name and description of IV] |
+| 相关性（Relevance）| [first-stage F-stat or correlation; what the IV predicts and why] |
+| 外生性（Exclusion Restriction）| [author's argument for why IV affects Y only through D; any indirect channel concerns] |
+| 弱工具检验 | [F ≥ 10? Kleibergen-Paap or Cragg-Donald stat] |
 
-**异质性分析 (Heterogeneity Analysis)** *(if present; skip if absent)*
+---
 
-[If the paper conducts heterogeneity analysis:
-- What dimensions of heterogeneity are examined? (industry, region, firm size, time period, etc.)
-- How is heterogeneity identified? (interaction terms, subgroup regressions)
-- What is the main pattern in the heterogeneous treatment effects?]
+**机制分析 (Mechanism Analysis)** *(如有；否则略去)*
 
-**进一步分析 (Further Analysis)** *(if present; skip if absent)*
+[For each hypothesized mechanism:]
 
-[Any additional analyses beyond the baseline: welfare calculations, back-of-envelope cost-benefit,
-general equilibrium exercises, policy simulation using estimated parameters, etc.]
+**机制 [N]：[mechanism name]**
+
+逻辑：[How does this channel work? What is the intermediate variable M between D and Y?]
+
+$$[机制回归方程，如 M_{it} = \gamma D_{it} + ... 或中介效应设定]$$
+
+| 变量 | 含义 | 构造方式 |
+|------|------|----------|
+| $M_{it}$ | [mechanism variable] | [how constructed — be specific] |
+
+结果：[coefficient on D in mechanism regression; what it implies about the channel]
+结论：[confirmed / ruled out / partially supported]
+
+---
+
+**异质性分析 (Heterogeneity Analysis)** *(如有；否则略去)*
+
+分析维度：[e.g., 地区/行业/规模/时间段]
+分组方法：[interaction terms / subgroup regressions / quantile]
+
+| 分组 / 条件 | 核心系数 | 与基准结果的关系 | 含义 |
+|-----------|---------|---------------|------|
+| [group A] | [β_A (SE)] | [larger/smaller/opposite] | [what this implies about the mechanism or heterogeneity source] |
+| [group B] | [β_B (SE)] | [...] | [...] |
+
+核心发现：[What does the heterogeneity pattern tell us? How does it support or complicate the main story?]
+
+---
+
+**进一步分析 (Further Analysis)** *(如有；否则略去)*
+
+[For each additional analysis:]
+
+**分析 [N]：[descriptive title]**
+
+设计逻辑：[Why does the author do this? What additional question does it answer? How does it connect to the baseline?]
+实证设定：[equation or method, concisely]
+结果：[key finding]
+与核心问题的联系：[how this extends, validates, or qualifies the baseline result]
+
+---
 
 **⚠️ 设计注意事项 (Design Flags)**
 
-[Use ⚠️ for each flagged issue. Include BOTH:
-(a) issues the authors themselves explicitly acknowledge
-(b) issues you identify as a critical reader
+[Use ⚠️ for EACH flagged issue. Ground every point in specific evidence from the paper — no generic claims.
 
-Cover: exclusion restriction, anticipation, SUTVA, clustering level adequacy,
-parallel trends plausibility, external validity, sample selection, specification sensitivity.]
+Two categories, clearly labeled:
+
+**作者自认局限 (Author-acknowledged)**:
+⚠️ [Quote or closely paraphrase what the paper itself says about limitations, caveats, or remaining concerns]
+
+**读者独立识别 (Reader-identified)**:
+⚠️ [Specific identification threat YOU see that the paper does not fully address — with reasoning]
+
+Cover as relevant: exclusion restriction, anticipation effects, SUTVA, clustering adequacy, parallel trends plausibility, external validity, sample selection, specification sensitivity, publication bias in mechanism results.]
 ```
+
+**Rule for 亮点 and 不足与疑问 sections** (applies globally, not just to empirical papers):
+
+- **亮点**: Anchor every point to specific features of THIS paper — a particular identification design choice, a novel dataset, an elegant theoretical insight, a surprising finding. Cite specific sections, tables, or methods. Do not use generic phrases like "identification is clean" without saying exactly what makes it clean.
+- **不足与疑问**: Start with what the paper explicitly acknowledges as its own limitations (cite section or footnote if possible). Then add reader-identified concerns — but each must be a specific, reasoned argument, not a checklist item. A concern is only worth writing if you can say WHY it matters for THIS paper's specific claims.
 
 ---
 

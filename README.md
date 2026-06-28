@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/version-0.7.1-0b4f5c">
+  <img alt="Version" src="https://img.shields.io/badge/version-0.8.0-0b4f5c">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-e8ad63">
   <img alt="Domain" src="https://img.shields.io/badge/domain-economics%20papers-234">
   <img alt="Skill" src="https://img.shields.io/badge/type-agent%20skill%20system-5fb2ab">
@@ -83,9 +83,9 @@ econ-paper-reader/
 │   └── cover.png                       # GitHub README cover image
 │
 ├── subskills/
-│   ├── epr-structure/SKILL.md          # Paper anatomy and section expectations
+│   ├── epr-structural/SKILL.md          # Paper anatomy and section expectations
 │   ├── epr-empirical/SKILL.md          # Reduced-form and structural empirical papers
-│   ├── epr-theory/SKILL.md             # Theory and structural model reading
+│   ├── epr-theoretical/SKILL.md             # Theory and structural model reading
 │   ├── epr-methodology/SKILL.md        # Econometrics and methods papers
 │   ├── epr-causal-inference/SKILL.md   # Identification strategies and diagnostics
 │   ├── epr-tables-figures/SKILL.md     # Regression tables, event studies, RD plots
@@ -110,12 +110,12 @@ deterministic by design: the agent does not guess which files to load after clas
 
 | Paper type | Load these subskills, in order |
 |---|---|
-| **Empirical - Reduced Form** | `epr-structure` -> `epr-empirical` -> `epr-causal-inference` -> `epr-tables-figures` |
-| **Empirical - Structural** | `epr-structure` -> `epr-empirical` -> `epr-theory` -> `epr-tables-figures` |
-| **Theoretical** | `epr-structure` -> `epr-theory` |
-| **Methodology** | `epr-structure` -> `epr-methodology` -> `epr-causal-inference` if identification strategies are critiqued |
-| **Mixed** | `epr-structure` -> `epr-empirical` -> `epr-theory` -> `epr-causal-inference` -> `epr-tables-figures` |
-| **Survey / Perspective** | `epr-structure` |
+| **Empirical - Reduced Form** | `epr-structural` -> `epr-empirical` -> `epr-causal-inference` -> `epr-tables-figures` |
+| **Empirical - Structural** | `epr-structural` -> `epr-empirical` -> `epr-theoretical` -> `epr-tables-figures` |
+| **Theoretical** | `epr-structural` -> `epr-theoretical` |
+| **Methodology** | `epr-structural` -> `epr-methodology` -> `epr-causal-inference` if identification strategies are critiqued |
+| **Mixed** | `epr-structural` -> `epr-empirical` -> `epr-theoretical` -> `epr-causal-inference` -> `epr-tables-figures` |
+| **Survey / Perspective** | `epr-structural` |
 
 Additional routing rules:
 
@@ -303,13 +303,13 @@ Quick-scan mode is much cheaper because it loads less context and reads selectiv
 |---|---|
 | Author | `ohjerryho` |
 | Repository | `github.com/ohjerryho/econ-paper-reader` |
-| Version | `0.7.1` |
+| Version | `0.8.0` |
 | License | `MIT` |
 
 ## Changelog
 
 ### v0.7.1 (2026-06-28)
-- Renamed subskills for consistent adjective-form naming: `epr-structure` → `epr-structural`, `epr-theory` → `epr-theoretical`, `epr-survey` → `epr-review`
+- Renamed subskills for consistent adjective-form naming: `epr-structural` → `epr-structural`, `epr-theoretical` → `epr-theoretical`, `epr-review` → `epr-review`
 - All internal references updated accordingly
 - Clarified token-usage guidance: workflow budget vs. static context payload
 
