@@ -308,6 +308,9 @@ Quick-scan mode is much cheaper because it loads less context and reads selectiv
 
 ## Changelog
 
+### v0.8.1 (2026-06-28)
+- Moved **亮点 / 不足 grounding rule** from `epr-empirical` to main `SKILL.md` — now applies to ALL paper types, not just empirical papers
+
 ### v0.8.0 (2026-06-28)
 - **epr-empirical**: Full rewrite of mandatory output block — all sections now use structured tables, not prose dumps
   - Fixed effects table includes a **rationale column** (what variation each FE absorbs and why)
