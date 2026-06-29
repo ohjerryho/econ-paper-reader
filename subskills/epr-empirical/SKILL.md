@@ -41,7 +41,11 @@ the structural parameters?*
 
 ## Mandatory output block for reduced-form papers
 
-When reading any reduced-form paper, the report **MUST** include a dedicated **实证设计 (Empirical Design)** block placed immediately after the 研究设计 section. Every sub-section below is **structured output** — use tables and formatted blocks, never unstructured prose dumps.
+When reading any reduced-form paper, the report **MUST** include a dedicated **实证设计 (Empirical Design)** block placed immediately after the 研究设计 section.
+
+Output format by section:
+- **基准回归、固定效应、变量说明、稳健性、异质性** → structured tables
+- **机制分析、进一步分析** → follow the paper's own logical structure; use narrative prose + LaTeX equations where needed; a rigid table cannot capture the author's reasoning, so don't force one
 
 ```
 ### 实证设计

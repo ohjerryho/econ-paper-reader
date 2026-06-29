@@ -81,7 +81,7 @@ Always produce a structured report. Depth scales with reading mode.
 **CRITICAL output rules**:
 1. Begin the report immediately with the paper title. Never write processing notes, progress summaries, or internal comments such as "Now I have enough material…", "Based on my reading…", or any similar meta-commentary before or after the report body. The report is the only output.
 2. Section headers must be **consistent in language throughout the report** — either all Chinese or all English. Never mix. Parenthetical translation is allowed (e.g., "核心问题 (Core Question)" or "Key Results（主要发现）"). Choose the language that matches the main body language of the report.
-3. **LaTeX formatting**: All mathematical expressions — equations, formulas, variables, Greek letters — must use inline math (`$...$`) or display math (`$$...$$`). Never use fenced code blocks (` ```tex ``` `, ` ```latex ``` `, or any ` ``` ` variant) for math. This ensures formulas render correctly in Markdown viewers.
+3. **LaTeX formatting**: All mathematical expressions — equations, formulas, variables ($Y$, $D_{it}$), Greek letters ($\alpha$, $\beta$, $\sigma$), subscripts, superscripts — must use inline math (`$...$`) or display math (`$$...$$`). This includes isolated symbols appearing in running text. Never use fenced code blocks (` ```tex ``` `, ` ```latex ``` `, any ` ``` ` variant, or single backtick `` `x_i` `` style) for math. This ensures formulas render correctly in all Markdown viewers.
 4. **Bilingual terminology**: Key terms, concept names, variable names, and technical jargon must preserve the original-language form on first use. When writing in Chinese about an English paper, write the Chinese translation followed by the English original in parentheses on first occurrence — e.g., "买方势力（buyer power）"、"双重差分法（difference-in-differences, DiD）". When writing in English about a Chinese paper, write the English followed by the Chinese in parentheses — e.g., "event study method（事件研究法）". Subsequent occurrences may use either form alone.
 
 ```
@@ -108,7 +108,11 @@ Always produce a structured report. Depth scales with reading mode.
 
 ### 研究设计
 
-[如何回答？简述识别策略或理论框架。]
+[研究设计是故事到模型/实证方法之间的桥梁，要回答以下问题：
+- **从问题到模型**：文章关心的现实问题，在模型或实证框架中对应哪些变量、方程或估计量？（e.g., "贸易开放程度对应关税变量 $\tau_{it}$，劳动力市场扭曲对应工资加成 $\mu$"）
+- **分析维度**：文章从哪些维度展开研究？（基准结果、机制、异质性、进一步验证等——说明各维度如何与核心问题相联系）
+- **识别策略/理论核心**：用1–2句说清楚因果识别的来源（e.g., 利用某政策的交错实施作为准自然实验），或理论模型的核心假设与均衡机制。
+不要简单复述故事；要揭示"作者用什么手段来回答问题"。]
 
 ### 模型设定 *(理论/结构估计文章必填，按 epr-theoretical 子技能的 Mandatory output block 填写；纯RF实证文章略去)*
 
