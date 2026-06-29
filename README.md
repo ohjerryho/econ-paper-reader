@@ -5,7 +5,7 @@
 <h1 align="center">econ-paper-reader</h1>
 
 <p align="center">
-  <strong>A structured skill system for reading, interpreting, and critically analyzing economics papers.</strong>
+  <strong>A structured AI reading skill system for economics papers.</strong>
 </p>
 
 <p align="center">
@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/version-0.8.1-0b4f5c">
+  <img alt="Version" src="https://img.shields.io/badge/version-0.8.2-0b4f5c">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-e8ad63">
   <img alt="Domain" src="https://img.shields.io/badge/domain-economics%20papers-234">
   <img alt="Skill" src="https://img.shields.io/badge/type-agent%20skill%20system-5fb2ab">
@@ -33,14 +33,23 @@
 
 ## What this skill does
 
-Economics papers have a strict narrative logic: every section has a job, every table carries
-part of the argument, and every identification strategy rests on assumptions that must be
-checked rather than merely summarized.
+Economics papers are not ordinary informational texts. They have a relatively stable narrative
+logic: every section has a job, every table carries part of the argument, and every identification
+strategy rests on assumptions that must be checked rather than merely summarized.
 
-`econ-paper-reader` teaches an AI agent to read papers the way an economist reads them:
-classify the paper type, load the right analytical lenses, reconstruct the research story,
-then evaluate whether the design, model, tables, figures, and claims actually support the
-paper's conclusion.
+`econ-paper-reader` is designed to make an AI agent read papers more like a trained economics
+researcher: first classify the paper type, then load the right analytical lenses, reconstruct the
+research story, and finally evaluate whether the research design, model specification, tables,
+figures, and author claims actually fit together.
+
+`econ-paper-reader` is for users who want to quickly grasp the basic logic and key information of
+economics papers. It goes beyond generic summary or introductory description: it organizes the
+paper structurally around the research question, theoretical mechanism, identification strategy,
+data sources, main conclusions, and potential value.
+
+`econ-paper-reader` does not replace real deep reading. It is better used as a literature screening
+and pre-reading tool, helping users quickly decide whether a paper matches their research interests
+and research needs before investing in close reading.
 
 The core idea is simple:
 
@@ -48,9 +57,15 @@ The core idea is simple:
 > Top-journal writing follows recognizable conventions. By encoding those conventions in
 > reverse, the agent knows what to look for when reading.
 
-This is not a generic summarizer. It is a domain-specific reading system for economics papers:
-empirical reduced-form work, structural estimation, theory, econometric methods, mixed papers,
-surveys, and Chinese CSSCI-style policy research.
+This is not a generic paper summarizer. It is a domain-specific reading system for economics
+papers, covering:
+
+- general reduced-form empirical papers;
+- structural estimation papers;
+- theoretical model papers;
+- econometric methods papers;
+- theory + empirical mixed papers;
+- review articles.
 
 ## Highlights
 
@@ -65,6 +80,19 @@ surveys, and Chinese CSSCI-style policy research.
 | **Policy context** | Policies, reforms, events, institutional background, especially for Chinese papers |
 | **Referee-style evaluation** | Strengths, weaknesses, missing robustness, external validity, publishability |
 | **Related references** | Select central references from the paper's own bibliography and format them cleanly |
+
+## Not meant for
+
+This skill does not replace:
+
+- deep expert-level interpretation;
+- actual replication with data and code;
+- formal proof verification;
+- field-specific expert judgment;
+- systematic literature discovery outside the paper's own reference list.
+
+It helps the agent read more like a trained economics researcher. It does not make the paper
+true, causal, publishable, or correctly identified by itself.
 
 ## Architecture
 
@@ -237,87 +265,16 @@ to equip it with the relevant skills or MCP servers.
 | **Standard read** | Research notes and seminar preparation | Full structured reading report |
 | **Referee read** | Deep critique, replication planning, publication judgment | Extended concerns, design threats, verdict |
 
-## Good fits
-
-Use this skill when you need to:
-
-- understand the logic of an economics paper rather than merely summarize it;
-- evaluate whether an identification strategy is credible;
-- decode regression tables, event-study figures, RD plots, or robustness checks;
-- reconstruct model assumptions, propositions, equilibrium conditions, and comparative statics;
-- extract policy or institutional context from empirical and Chinese-language papers;
-- decide whether a paper is useful for a literature review, proposal, referee report, or replication plan.
-
-## Not meant for
-
-This skill does not replace:
-
-- actual replication with data and code;
-- formal proof verification;
-- field-specific expert judgment;
-- a PDF parser or OCR system;
-- citation discovery outside the paper's own reference list.
-
-It helps the agent read more like a trained economics researcher. It does not make the paper
-true, causal, publishable, or correctly identified by itself.
-
 ## Token usage
 
-This is a **heavy skill** by design. A thorough economics-paper reading task may require repeated
-PDF extraction, table/figure inspection, subskill loading, section rereading, report drafting, and
-revision. The ranges below are conservative **end-to-end workflow budgets**, not just the size of
-the extracted paper text.
+This is not a **lightweight skill**. A complete economics-paper reading task usually involves PDF
+extraction, table/figure inspection, subskill loading, section rereading, report drafting, and
+revision. The table below gives tested **end-to-end workflow** budget estimates.
 
-| Paper length / type | Conservative workflow budget |
+| Paper length / type | Budget |
 |---|---:|
-| Short paper / working paper, about 20-30 pages | 150k-200k tokens |
+| Short paper, about 20-30 pages | 150k-200k tokens |
 | Full journal article, about 40-50 pages | 200k-300k tokens |
-| OCR-heavy, appendix-heavy, or referee-style read | 300k+ tokens |
-
-The v0.7.1 local test run measured only the reproducible static context payload — extracted
-paper text plus routed skill instructions plus the final report. Treat that static payload as a
-lower bound only.
-
-The v0.8.1 local test run used a fuller per-paper workflow proxy: routed skill instructions,
-full extracted paper text, formula/table/section rereads, final report text, and an allowance for
-draft/revision overhead. This is still **not billing-exact runtime usage**, because Codex Desktop
-did not expose a per-run token counter in that test. The observed workflow proxies were:
-
-| Tested paper type | Full-workflow proxy |
-|---|---:|
-| 26-page Chinese empirical paper with policy context | 135k-165k tokens |
-| 29-page theory + calibration article | 85k-115k tokens |
-| 71-page mixed structural/empirical working paper with PDF syntax warnings | 145k-190k tokens |
-
-These observed proxies were mostly below the conservative budgets above, but they were far above
-the static PDF text size. Quick-scan mode is much cheaper because it loads less context and reads
-selectively.
-
-## Design principles
-
-1. **Read for argument, not just content.**  
-   Economics papers make claims through a sequence: motivation -> design/model -> evidence -> contribution.
-
-2. **Treat identification as the spine of empirical work.**  
-   The central question is not "what did the authors estimate?" but "why should we believe it is causal?"
-
-3. **Keep equations visible.**  
-   Important regressions and models should be reproduced in LaTeX rather than paraphrased away.
-
-4. **Interpret magnitudes economically.**  
-   A significant coefficient is not necessarily a meaningful effect.
-
-5. **Separate author claims from reader judgment.**  
-   The report should state what the authors argue and then assess whether the argument holds.
-
-## Metadata
-
-| Field | Value |
-|---|---|
-| Author | `ohjerryho` |
-| Repository | `github.com/ohjerryho/econ-paper-reader` |
-| Version | `0.8.2` |
-| License | `MIT` |
 
 ## Changelog
 
