@@ -321,6 +321,11 @@ selectively.
 
 ## Changelog
 
+### v0.8.2 (2026-06-28)
+- **LaTeX rule strengthened**: isolated math symbols and Greek letters in running text must also use `$...$`; backtick inline code (`` `x_i` ``) for math is now explicitly banned
+- **研究设计 template**: now explains the bridge from real-world question → model variables/equations → analysis dimensions (mechanism, heterogeneity, etc.)
+- **epr-empirical**: mechanism analysis and further analysis follow the paper's own logical structure (narrative + equations); rigid table format only required for robustness and heterogeneity
+
 ### v0.8.1 (2026-06-28)
 - Moved **亮点 / 不足 grounding rule** from `epr-empirical` to main `SKILL.md` — now applies to ALL paper types, not just empirical papers
 
