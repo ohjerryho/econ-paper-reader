@@ -316,20 +316,20 @@ selectively.
 |---|---|
 | Author | `ohjerryho` |
 | Repository | `github.com/ohjerryho/econ-paper-reader` |
-| Version | `0.8.1` |
+| Version | `0.8.2` |
 | License | `MIT` |
 
 ## Changelog
 
-### v0.8.2 (2026-06-28)
+### v0.8.2 (2026-06-29)
 - **LaTeX rule strengthened**: isolated math symbols and Greek letters in running text must also use `$...$`; backtick inline code (`` `x_i` ``) for math is now explicitly banned
 - **研究设计 template**: now explains the bridge from real-world question → model variables/equations → analysis dimensions (mechanism, heterogeneity, etc.)
 - **epr-empirical**: mechanism analysis and further analysis follow the paper's own logical structure (narrative + equations); rigid table format only required for robustness and heterogeneity
 
-### v0.8.1 (2026-06-28)
+### v0.8.1 (2026-06-29)
 - Moved **亮点 / 不足 grounding rule** from `epr-empirical` to main `SKILL.md` — now applies to ALL paper types, not just empirical papers
 
-### v0.8.0 (2026-06-28)
+### v0.8.0 (2026-06-29)
 - **epr-empirical**: Full rewrite of mandatory output block — all sections now use structured tables, not prose dumps
   - Fixed effects table includes a **rationale column** (what variation each FE absorbs and why)
   - New **IV validity block**: relevance (first-stage F / correlation), exclusion restriction argument, weak instrument test
@@ -359,7 +359,7 @@ selectively.
 - Added update commands for existing local installs.
 - Refreshed README presentation with a project cover image and bilingual documentation.
 
-### v0.6.0 (2026-06-27)
+### v0.6.0 (2026-06-28)
 
 - Opening section renamed to **这篇文章讲了个什么故事**: full narrative, not a brief summary.
 - Subskill routing is now deterministic by paper type.
