@@ -111,9 +111,9 @@ econ-paper-reader/
 │   └── cover.png                       # GitHub README cover image
 │
 ├── subskills/
-│   ├── epr-structural/SKILL.md          # Paper anatomy and section expectations
+│   ├── epr-structural/SKILL.md         # Paper anatomy and section expectations
 │   ├── epr-empirical/SKILL.md          # Reduced-form and structural empirical papers
-│   ├── epr-theoretical/SKILL.md             # Theory and structural model reading
+│   ├── epr-theoretical/SKILL.md        # Theory and structural model reading
 │   ├── epr-methodology/SKILL.md        # Econometrics and methods papers
 │   ├── epr-causal-inference/SKILL.md   # Identification strategies and diagnostics
 │   ├── epr-tables-figures/SKILL.md     # Regression tables, event studies, RD plots
