@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/version-0.9.0-0b4f5c">
+  <img alt="Version" src="https://img.shields.io/badge/version-0.9.1-0b4f5c">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-e8ad63">
   <img alt="Domain" src="https://img.shields.io/badge/domain-economics%20papers-234">
   <img alt="Skill" src="https://img.shields.io/badge/type-agent%20skill%20system-5fb2ab">
@@ -277,6 +277,9 @@ revision. The table below gives tested **end-to-end workflow** budget estimates.
 | Full journal article, about 40-50 pages | 200k-300k tokens |
 
 ## Changelog
+
+### v0.9.1 (2026-08-19)
+- **理论基础 field**: report header gains a **理论基础** metadata field listing every theoretical branch the paper belongs to, sourced strictly from the author's own statements in the introduction or literature review ("this paper contributes to the literature on X"). Format: `理论名称 (Anchor reference, year)`. If no explicit author self-statement is found, the field is left blank — no inference.
 
 ### v0.9.0 (2026-08-19)
 - **Data sources block**: `epr-empirical` now opens the 实证设计 section with a mandatory **数据说明 (Data Sources & Coverage)** table listing every dataset used — name, provider, observation level, time span, sample size, and accessibility (public / restricted / proprietary). Merge logic and sample selection criteria are noted when present.

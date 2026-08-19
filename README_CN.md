@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/version-0.9.0-0b4f5c">
+  <img alt="Version" src="https://img.shields.io/badge/version-0.9.1-0b4f5c">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-e8ad63">
   <img alt="Domain" src="https://img.shields.io/badge/domain-economics%20papers-234">
   <img alt="Skill" src="https://img.shields.io/badge/type-agent%20skill%20system-5fb2ab">
@@ -255,6 +255,10 @@ git -C ~/.claude/skills/econ-paper-reader pull
 | 完整期刊论文，约 40-50 页 | 200k-300k tokens |
 
 ## 更新日志
+
+### v0.9.1（2026-08-19）
+
+- **理论基础字段**：报告头部元信息新增**理论基础**字段，列出论文所属的全部理论分支。来源严格限定为作者在引言或文献综述中的明确自述（如"本文贡献于……文献"），不允许 agent 自行推断。格式：`理论名称 (锚点文献, 年份)`。若全文无作者明确自述，该字段留空。
 
 ### v0.9.0（2026-08-19）
 

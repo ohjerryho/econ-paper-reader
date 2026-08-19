@@ -1,6 +1,6 @@
 ---
 name: econ-paper-reader
-version: 0.9.0
+version: 0.9.1
 author: ohjerryho
 description: >
   Systematic reading, interpretation, and critical analysis of economics papers — empirical,
@@ -90,6 +90,7 @@ Always produce a structured report. Depth scales with reading mode.
 **作者**: [Authors]
 **来源**: [Journal / Source, Year]  *(no page numbers)*
 **研究领域**: [e.g., 国际贸易、产业组织、劳动经济学]
+**理论基础**: [每条格式：理论名称 (锚点文献，年份)；来源：引言/文献综述中作者明确表明"属于/贡献于XX文献"的表述；如作者无明确自述则不填；例：异质性企业贸易理论 (Melitz, 2003)、不完全契约理论 (Hart & Moore, 1990)]
 **Paper type**: [e.g., Empirical-RF / Theory / Mixed / Methodology]
 
 ---
