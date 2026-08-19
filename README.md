@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/version-0.8.2-0b4f5c">
+  <img alt="Version" src="https://img.shields.io/badge/version-0.9.0-0b4f5c">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-e8ad63">
   <img alt="Domain" src="https://img.shields.io/badge/domain-economics%20papers-234">
   <img alt="Skill" src="https://img.shields.io/badge/type-agent%20skill%20system-5fb2ab">
@@ -277,6 +277,12 @@ revision. The table below gives tested **end-to-end workflow** budget estimates.
 | Full journal article, about 40-50 pages | 200k-300k tokens |
 
 ## Changelog
+
+### v0.9.0 (2026-08-19)
+- **Data sources block**: `epr-empirical` now opens the 实证设计 section with a mandatory **数据说明 (Data Sources & Coverage)** table listing every dataset used — name, provider, observation level, time span, sample size, and accessibility (public / restricted / proprietary). Merge logic and sample selection criteria are noted when present.
+- **Variable table extended**: the 变量说明 table gains a **数据来源** column so every variable's origin is visible at a glance. Cross-references the数据说明 table; a single-dataset note at the header may substitute when all variables share one source.
+- **Mechanism variable table extended**: the per-mechanism variable table also gains a **数据来源** column, flagging any new dataset not in the main数据说明.
+- **Inline source notes for robustness / heterogeneity / further analysis**: instructions added to note new data sources in-place when those sections introduce datasets beyond the main数据说明 table.
 
 ### v0.8.2 (2026-06-29)
 - **LaTeX rule strengthened**: isolated math symbols and Greek letters in running text must also use `$...$`; backtick inline code (`` `x_i` ``) for math is now explicitly banned

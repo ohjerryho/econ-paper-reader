@@ -1,6 +1,6 @@
 ---
 name: econ-paper-reader
-version: 0.8.2
+version: 0.9.0
 author: ohjerryho
 description: >
   Systematic reading, interpretation, and critical analysis of economics papers — empirical,
@@ -118,13 +118,15 @@ Always produce a structured report. Depth scales with reading mode.
 
 ### 实证设计 *(reduced-form 实证文章必填，按 epr-empirical 子技能的 Mandatory output block 填写；纯理论文章略去)*
 
+**数据说明** — [数据集 / 来源 / 观测层级 / 时间跨度 / 样本量 / 可获取性；多数据集时说明匹配逻辑]
+
 **回归方程** — [LaTeX 方程，完整呈现文中所有关键估计方程]
 
 **变量说明**
 
-| 变量 | 含义 | 构造方式 | 选择动机 |
-|------|------|----------|----------|
-| ... | ... | ... | ... |
+| 变量 | 含义 | 数据来源 | 构造方式 | 选择动机 |
+|------|------|---------|----------|----------|
+| ... | ... | ... | ... | ... |
 
 **⚠️ 设计注意事项** — [作者明确提及的问题 + 读者独立识别的潜在威胁]
 

@@ -1,6 +1,6 @@
 ---
 name: epr-empirical
-version: 0.1.0
+version: 0.2.0
 author: ohjerryho
 description: >
   Subskill for reading empirical economics papers, covering both reduced-form and structural
@@ -44,11 +44,23 @@ the structural parameters?*
 When reading any reduced-form paper, the report **MUST** include a dedicated **实证设计 (Empirical Design)** block placed immediately after the 研究设计 section.
 
 Output format by section:
-- **基准回归、固定效应、变量说明、稳健性、异质性** → structured tables
+- **数据说明、基准回归、固定效应、变量说明、稳健性、异质性** → structured tables
 - **机制分析、进一步分析** → follow the paper's own logical structure; use narrative prose + LaTeX equations where needed; a rigid table cannot capture the author's reasoning, so don't force one
 
 ```
 ### 实证设计
+
+**数据说明 (Data Sources & Coverage)**
+
+| 数据集 | 来源 / 提供方 | 观测层级 | 时间跨度 | 样本量 | 可获取性 |
+|--------|-------------|---------|---------|-------|---------|
+| [数据集名称] | [调查机构 / 数据库 / 行政部门] | [企业 / 个人 / 县 / 行业 ...] | [起止年份] | [N = ...] | [公开 / 受限 / 商业购买] |
+| [第二个数据集（如有）] | [...] | [...] | [...] | [...] | [...] |
+
+[如多数据集合并：说明匹配键（如企业代码、城市代码）和匹配率（如论文有报告）。]
+[样本筛选标准：如有（如剔除金融行业、限定规模以上企业等），一两句说明。]
+
+---
 
 **基准回归方程 (Baseline Regression)**
 
@@ -67,13 +79,13 @@ Number equations if the paper does. Never paraphrase — show the actual equatio
 
 **变量说明 (Variable Definitions)**
 
-| 变量 | 含义 | 构造方式 | 选择动机 |
-|------|------|----------|----------|
-| $Y_{it}$ | [outcome] | [source + computation] | [why this operationalization] |
-| $D_{it}$ | [treatment] | [assignment or measurement] | [why] |
-| $X_{it}$ | [controls] | [how computed] | [why included / what omitted variable they address] |
+| 变量 | 含义 | 数据来源 | 构造方式 | 选择动机 |
+|------|------|---------|----------|----------|
+| $Y_{it}$ | [outcome] | [dataset name — cross-ref 数据说明] | [computation method] | [why this operationalization] |
+| $D_{it}$ | [treatment] | [dataset or assignment source] | [assignment or measurement] | [why] |
+| $X_{it}$ | [controls] | [dataset name] | [how computed] | [why included / what omitted variable they address] |
 
-[Log vs. level matters — state it. Include every variable and instrument.]
+[Log vs. level matters — state it. Include every variable and instrument. 数据来源列与数据说明表交叉引用；若所有变量均来自同一数据集，可在表头注明后其余行省略重复。]
 
 ---
 
@@ -84,6 +96,8 @@ Number equations if the paper does. Never paraphrase — show the actual equatio
 | 替代规格 | [alternative controls / sample / window] | [robust / sensitive] |
 | 安慰剂检验 | [placebo treatment or outcome] | [passes / fails] |
 | [other check] | [description] | [result] |
+
+[如某行引入了新数据集（数据说明表未覆盖），在该行"具体做法"中注明来源；复用原数据集的行无需重复。]
 
 **IV 有效性** *(如使用IV，必填；否则略去)*
 
@@ -106,9 +120,9 @@ Number equations if the paper does. Never paraphrase — show the actual equatio
 
 $$[机制回归方程，如 M_{it} = \gamma D_{it} + ... 或中介效应设定]$$
 
-| 变量 | 含义 | 构造方式 |
-|------|------|----------|
-| $M_{it}$ | [mechanism variable] | [how constructed — be specific] |
+| 变量 | 含义 | 数据来源 | 构造方式 |
+|------|------|---------|----------|
+| $M_{it}$ | [mechanism variable] | [dataset name; note if new dataset not in 数据说明] | [how constructed — be specific] |
 
 结果：[coefficient on D in mechanism regression; what it implies about the channel]
 结论：[confirmed / ruled out / partially supported]
@@ -118,7 +132,7 @@ $$[机制回归方程，如 M_{it} = \gamma D_{it} + ... 或中介效应设定]$
 **异质性分析 (Heterogeneity Analysis)** *(如有；否则略去)*
 
 分析维度：[e.g., 地区/行业/规模/时间段]
-分组方法：[interaction terms / subgroup regressions / quantile]
+分组方法：[interaction terms / subgroup regressions / quantile — 如分组变量来自新数据集（数据说明表未覆盖），在此注明来源]
 
 | 分组 / 条件 | 核心系数 | 与基准结果的关系 | 含义 |
 |-----------|---------|---------------|------|
@@ -136,7 +150,7 @@ $$[机制回归方程，如 M_{it} = \gamma D_{it} + ... 或中介效应设定]$
 **分析 [N]：[descriptive title]**
 
 设计逻辑：[Why does the author do this? What additional question does it answer? How does it connect to the baseline?]
-实证设定：[equation or method, concisely]
+实证设定：[equation or method; if a new dataset is introduced for this analysis, note the source here]
 结果：[key finding]
 与核心问题的联系：[how this extends, validates, or qualifies the baseline result]
 

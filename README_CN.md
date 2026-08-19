@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/version-0.8.2-0b4f5c">
+  <img alt="Version" src="https://img.shields.io/badge/version-0.9.0-0b4f5c">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-e8ad63">
   <img alt="Domain" src="https://img.shields.io/badge/domain-economics%20papers-234">
   <img alt="Skill" src="https://img.shields.io/badge/type-agent%20skill%20system-5fb2ab">
@@ -255,6 +255,13 @@ git -C ~/.claude/skills/econ-paper-reader pull
 | 完整期刊论文，约 40-50 页 | 200k-300k tokens |
 
 ## 更新日志
+
+### v0.9.0（2026-08-19）
+
+- **数据说明模块**：`epr-empirical` 在实证设计节的开头新增必填的**数据说明（Data Sources & Coverage）**表格，列出论文使用的每个数据集——名称、提供方、观测层级、时间跨度、样本量和可获取性（公开 / 受限 / 商业购买）。如有多数据集合并，注明匹配键和匹配率；样本筛选标准也一并说明。
+- **变量说明表新增数据来源列**：变量说明表新增**数据来源**列，一眼即可看出每个变量的数据出处。与数据说明表交叉引用；若所有变量均来自同一数据集，可在表头统一注明后省略重复。
+- **机制分析变量表新增数据来源列**：机制分析的逐机制变量表同步新增数据来源列，标注数据说明表外新引入的数据集。
+- **稳健性 / 异质性 / 进一步分析的就近来源注释**：如相关节引入了数据说明表未覆盖的新数据集，指令要求在该处就近注明来源。
 
 ### v0.8.2（2026-06-29）
 
